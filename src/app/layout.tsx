@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/lib/assets";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
   description:
     "Construis ton projet d’études en France avec LIEC. De l’orientation au dossier de candidature, nous t’accompagnons pour avancer avec méthode et confiance.",
   icons: {
-    icon: "/logo_LIEC (1).png",
-    shortcut: "/logo_LIEC (1).png",
-    apple: "/logo_LIEC (1).png",
+    icon: getAssetPath("/logo_LIEC (1).png"),
+    shortcut: getAssetPath("/logo_LIEC (1).png"),
+    apple: getAssetPath("/logo_LIEC (1).png"),
   },
 };
 
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={plusJakartaSans.variable}>
       <head>
-        <link rel="icon" href="/logo_LIEC (1).png" type="image/png" />
+        <link rel="icon" href={getAssetPath("/logo_LIEC (1).png")} type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link

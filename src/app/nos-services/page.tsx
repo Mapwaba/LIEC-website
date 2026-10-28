@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/lib/assets";
 import React from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -19,7 +20,7 @@ export default function NosServicesPage() {
         "Correction approfondie des lettres de motivation et du projet d'études",
         "Constitution et vérification des pièces justificatives officielles",
       ],
-      image: "/pole_01_ai.jpg",
+      image: getAssetPath("/pole_01_ai.jpg"),
       reverse: false,
     },
     {
@@ -159,7 +160,7 @@ export default function NosServicesPage() {
                   >
                     <div className="relative overflow-hidden rounded-3xl shadow-lg h-[360px]">
                       <img
-                        src={service.image}
+                        src={getAssetPath(service.image)}
                         alt={service.title}
                         className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
                       />
