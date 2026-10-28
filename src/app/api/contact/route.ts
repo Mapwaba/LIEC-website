@@ -90,6 +90,7 @@ Date : ${new Date().toLocaleString("fr-FR", { timeZone: "Africa/Kinshasa" })} (h
 
     // 1. Essai d'envoi via Resend API (si configuré dans Vercel)
     const resendApiKey = process.env.RESEND_API_KEY;
+    let resendDiag: any = null;
     if (resendApiKey) {
       try {
         const fromEmail = process.env.RESEND_FROM || "LIEC Website <onboarding@resend.dev>";
@@ -112,10 +113,11 @@ Date : ${new Date().toLocaleString("fr-FR", { timeZone: "Africa/Kinshasa" })} (h
         if (resendRes.ok) {
           return NextResponse.json({ success: true, method: "resend" });
         } else {
-          const errData = await resendRes.json();
-          console.error("Resend API error:", errData);
+          resendDiag = await resendRes.json();
+          console.error("Resend API error:", resendDiag);
         }
       } catch (err: any) {
+        resendDiag = { exception: err?.message };
         console.error("Resend fetch exception:", err?.message);
       }
     }
@@ -155,6 +157,8 @@ Date : ${new Date().toLocaleString("fr-FR", { timeZone: "Africa/Kinshasa" })} (h
           success: false,
           method: "fallback",
           error: smtpErr?.message,
+          resendConfigured: Boolean(resendApiKey),
+          resendDiag,
           recipient: recipientEmail,
         });
       }
