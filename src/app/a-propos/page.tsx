@@ -1,5 +1,7 @@
 "use client";
 
+import { getAssetPath } from "@/lib/assets";
+
 import React from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -40,21 +42,21 @@ export default function AProposPage() {
       name: "Direction & Conseil Académique",
       role: "Pôle Orientation & Stratégie — Lyon",
       bio: "Diplômés de l'enseignement supérieur français, nos conseillers de Lyon veillent à l'adéquation entre les profils des candidats et les attentes réelles des universités et grandes écoles.",
-      image: "/img_01.jpeg",
+      image: getAssetPath("/img_01.jpeg"),
       badge: "Siège Lyon • France",
     },
     {
       name: "Coordination & Relations Familles",
       role: "Bureau d'Accompagnement — Kinshasa",
       bio: "Basée à Kinshasa, notre équipe assure le diagnostic initial, le suivi documentaire quotidien, la préparation aux entretiens Campus France et l'information transparente des parents.",
-      image: "/img_04.png",
+      image: getAssetPath("/img_04.png"),
       badge: "Bureau Kinshasa • RDC",
     },
     {
       name: "Mentorat LIEC-France PREPA",
       role: "Pédagogie & Méthodologie Universitaire",
       bio: "Nos formateurs et mentors accompagnent la cohorte PREPA sur l'expression écrite, l'éloquence, la méthodologie de la dissertation et l'autonomie de recherche.",
-      image: "/img_03.png",
+      image: getAssetPath("/img_03.png"),
       badge: "Corps Pédagogique",
     },
   ];
@@ -85,7 +87,7 @@ export default function AProposPage() {
       name: "AéroQualis",
       category: "Voyage & Aviation",
       icon: "flight_takeoff",
-      logo: "/logo_aeroqualis.png",
+      logo: getAssetPath("/logo_aeroqualis.png"),
       description:
         "Vente de billets & services de voyage, transport Ville ↔ Aéroport, assistance documentaire & démarches aéronautiques, manuels, procédures & conseil aux compagnies aériennes, location et affrètement d'aéronefs.",
       contacts: [
@@ -97,7 +99,7 @@ export default function AProposPage() {
       name: "Royal Services",
       category: "Voyage & Mobilité",
       icon: "travel_explore",
-      logo: "/logo_royal_services.png",
+      logo: getAssetPath("/logo_royal_services.png"),
       description:
         "Assistance voyage, demande de rendez-vous, réservation de billets et hôtels, classement et suivi de dossiers, orientation pour études à l’étranger.",
       contacts: [
@@ -110,51 +112,51 @@ export default function AProposPage() {
     {
       number: "01",
       name: "ISCOM",
-      logo: "/logo_ISCOM.png",
+      logo: getAssetPath("/logo_ISCOM.png"),
       fields: "Communication, publicité, marketing et événementiel.",
     },
     {
       number: "02",
       name: "MyDigitalSchool",
-      logo: "/logo_My_Digital_School.png",
+      logo: getAssetPath("/logo_My_Digital_School.png"),
       fields: "Développement web, création numérique, webmarketing et UX/UI design.",
     },
     {
       number: "03",
       name: "École Internationale Tunon",
-      logo: "/logo_TUNON.png",
+      logo: getAssetPath("/logo_TUNON.png"),
       fields: "Tourisme, hôtellerie, relations publiques et événementiel.",
     },
     {
       number: "04",
       name: "IHECF",
-      logo: "/logo_IHECF.png",
+      logo: getAssetPath("/logo_IHECF.png"),
       fields: "Comptabilité, expertise comptable, finance et contrôle de gestion.",
     },
     {
       number: "05",
       name: "Ipac Bachelor Factory",
-      logo: "/logo_Ipac.png",
+      logo: getAssetPath("/logo_Ipac.png"),
       fields: "Commerce, gestion, finance, communication et logistique.",
     },
     {
       number: "06",
       name: "MBway",
-      logo: "/MBway.png",
+      logo: getAssetPath("/MBway.png"),
       fields:
         "Management, entrepreneuriat, ressources humaines, finance et commerce international.",
     },
     {
       number: "07",
       name: "ESMES Business School",
-      logo: "/logo_ESMES_Business_School.png",
+      logo: getAssetPath("/logo_ESMES_Business_School.png"),
       fields:
         "Management, commerce, stratégie d’entreprise et développement international.",
     },
     {
       number: "08",
       name: "My French Degree",
-      logo: "/logo_my_french_degree.png",
+      logo: getAssetPath("/logo_my_french_degree.png"),
       fields:
         "Communication and Advertising (via ISCOM)\nFinance, Accounting, and Auditing (via IHECF)\nDigital Technology, Webmarketing, and Development (via MyDigitalSchool)\nManagement, Commerce, and Human Resources (via Pigier, Ipac Bachelor Factory, and MBway)\nTourism, Luxury, and Event Management (via École Internationale Tunon)",
     },
@@ -218,13 +220,13 @@ export default function AProposPage() {
                       <img
                         alt="Conseil académique LIEC"
                         className="w-full h-full object-cover object-top"
-                        src="/img_01.jpeg"
+                        src={getAssetPath("/img_01.jpeg")}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
                       <div className="absolute bottom-4 left-4 right-4 p-space-md rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-lg flex items-center justify-between">
                         <div className="flex items-center gap-space-sm">
                           <img
-                            src="/logo_LIEC.jpeg"
+                            src={getAssetPath("/logo_LIEC.jpeg")}
                             alt="Logo LIEC"
                             className="h-10 w-10 object-contain rounded-lg"
                           />

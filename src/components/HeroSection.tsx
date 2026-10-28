@@ -1,5 +1,7 @@
 "use client";
 
+import { getAssetPath } from "@/lib/assets";
+
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -256,7 +258,7 @@ export default function HeroSection() {
                 <img
                   alt="Logo LIEC Education"
                   className="h-8 w-8 object-contain rounded-md"
-                  src="/logo_LIEC.jpeg"
+                  src={getAssetPath("/logo_LIEC.jpeg")}
                 />
                 <div className="flex flex-col pr-space-xs">
                   <span className="font-label-sm text-label-sm font-bold text-primary leading-none">

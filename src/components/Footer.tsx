@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/lib/assets";
 import React from "react";
 import Link from "next/link";
 
@@ -12,7 +13,7 @@ export default function Footer() {
               <img
                 alt="Logo LIEC Education"
                 className="h-10 w-auto object-contain rounded-md bg-white p-1"
-                src="/logo_LIEC.jpeg"
+                src={getAssetPath("/logo_LIEC.jpeg")}
               />
               <span className="font-headline-sm text-headline-sm text-surface font-extrabold tracking-tight">
                 LIEC

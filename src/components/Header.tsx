@@ -1,5 +1,7 @@
 "use client";
 
+import { getAssetPath } from "@/lib/assets";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -41,7 +43,7 @@ export default function Header() {
             <img
               alt="Logo LIEC Education"
               className="h-14 md:h-16 w-auto object-contain rounded-lg shadow-sm"
-              src="/logo_LIEC.jpeg"
+              src={getAssetPath("/logo_LIEC.jpeg")}
             />
           </Link>
         </div>

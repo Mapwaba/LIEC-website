@@ -1,5 +1,7 @@
 "use client";
 
+import { getAssetPath } from "@/lib/assets";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -236,7 +238,7 @@ export default function DemarrerMonProjetPage() {
               <div className="flex flex-col items-center text-center mb-8">
                 <div className="h-20 w-20 rounded-full bg-[#eef2fc] p-2 shadow-[8px_8px_16px_#c6d0e6,-8px_-8px_16px_#ffffff] border-4 border-white flex items-center justify-center overflow-hidden mb-4">
                   <img
-                    src="/logo_LIEC (1).png"
+                    src={getAssetPath("/logo_LIEC (1).png")}
                     alt="Logo LIEC"
                     className="h-full w-full object-contain rounded-full"
                   />
