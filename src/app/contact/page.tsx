@@ -27,6 +27,7 @@ function limitDigits(val: string, maxDigits = 14) {
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState<"direct" | "fallback">("fallback");
   const [mailtoUrl, setMailtoUrl] = useState("");
   const [whatsappUrl, setWhatsappUrl] = useState("");
   const [formData, setFormData] = useState({
@@ -72,13 +73,14 @@ export default function ContactPage() {
       const result = await res.json();
       setSubmitted(true);
 
-      // Si pas de SMTP configuré sur le serveur, on déclenche le client email automatiquement
-      if (result?.method === "fallback") {
-        window.location.href = generatedMailto;
+      if (result?.success && (result?.method === "smtp" || result?.method === "resend")) {
+        setSubmissionStatus("direct");
+      } else {
+        setSubmissionStatus("fallback");
       }
     } catch {
       setSubmitted(true);
-      window.location.href = generatedMailto;
+      setSubmissionStatus("fallback");
     } finally {
       setLoading(false);
     }
@@ -253,27 +255,38 @@ export default function ContactPage() {
 
                   {submitted ? (
                     <div className="p-8 rounded-3xl bg-[#eef2fc] shadow-[inset_6px_6px_12px_#cbd5ea,inset_-6px_-6px_12px_#ffffff] text-center flex flex-col items-center gap-4">
-                      <div className="h-16 w-16 rounded-full bg-secondary/15 text-secondary flex items-center justify-center">
+                      <div className={`h-16 w-16 rounded-full ${submissionStatus === "direct" ? "bg-secondary/15 text-secondary" : "bg-primary/10 text-primary"} flex items-center justify-center`}>
                         <span className="material-symbols-outlined text-4xl">
-                          verified
+                          {submissionStatus === "direct" ? "mark_email_read" : "send"}
                         </span>
                       </div>
+
                       <h3 className="font-headline-md text-primary font-bold">
-                        Ta demande d’entretien est enregistrée !
+                        {submissionStatus === "direct"
+                          ? "Votre message a été transmis avec succès !"
+                          : "Votre demande d'entretien est prête !"}
                       </h3>
-                      <p className="font-body-md text-on-surface-variant max-w-md leading-relaxed">
-                        Destinataire officiel : <a href="mailto:contacts@liecconsulting.com" className="text-primary font-bold underline">contacts@liecconsulting.com</a>.
-                        Un conseiller académique LIEC te contactera sous 24h par email ou WhatsApp.
-                      </p>
+
+                      {submissionStatus === "direct" ? (
+                        <p className="font-body-md text-on-surface-variant max-w-md leading-relaxed">
+                          Un email a été envoyé directement à <a href="mailto:contacts@liecconsulting.com" className="text-primary font-bold underline">contacts@liecconsulting.com</a>.
+                          Un conseiller académique LIEC (Lyon &amp; Kinshasa) vous contactera sous 24h ouvrées par email ou WhatsApp.
+                        </p>
+                      ) : (
+                        <p className="font-body-md text-on-surface-variant max-w-md leading-relaxed">
+                          Pour finaliser et garantir la réception immédiate par le bureau LIEC (<a href="mailto:contacts@liecconsulting.com" className="text-primary font-bold underline">contacts@liecconsulting.com</a>), 
+                          veuillez transmettre votre message via l&apos;un des boutons ci-dessous :
+                        </p>
+                      )}
 
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full pt-2">
                         {mailtoUrl && (
                           <a
                             href={mailtoUrl}
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-surface font-label-md font-bold shadow-[4px_4px_10px_#b8c4dd,-4px_-4px_10px_#ffffff] hover:opacity-90 transition-all text-xs"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-primary text-surface font-label-md font-bold shadow-[4px_4px_10px_#b8c4dd,-4px_-4px_10px_#ffffff] hover:opacity-90 transition-all text-xs"
                           >
                             <span className="material-symbols-outlined text-base">mail</span>
-                            Ouvrir mon email vers contacts@liecconsulting.com
+                            {submissionStatus === "direct" ? "Ouvrir dans ma messagerie" : "Transmettre par Email (contacts@liecconsulting.com)"}
                           </a>
                         )}
                         {whatsappUrl && (
@@ -281,7 +294,7 @@ export default function ContactPage() {
                             href={whatsappUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-secondary text-surface font-label-md font-bold shadow-[4px_4px_10px_#b8c4dd,-4px_-4px_10px_#ffffff] hover:bg-primary transition-all text-xs"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-secondary text-surface font-label-md font-bold shadow-[4px_4px_10px_#b8c4dd,-4px_-4px_10px_#ffffff] hover:bg-primary transition-all text-xs"
                           >
                             <span className="material-symbols-outlined text-base">chat</span>
                             Notifier par WhatsApp (+243 803 615 543)

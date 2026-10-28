@@ -15,29 +15,7 @@ export async function POST(request: Request) {
 
     const recipientEmail = "contacts@liecconsulting.com";
 
-    // Vérification de la présence d'identifiants SMTP (Google Workspace / Gmail / Host)
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
-    const smtpPort = Number(process.env.SMTP_PORT) || 465;
-
-    if (smtpUser && smtpPass) {
-      const transporter = nodemailer.createTransport({
-        host: smtpHost,
-        port: smtpPort,
-        secure: smtpPort === 465,
-        auth: {
-          user: smtpUser,
-          pass: smtpPass,
-        },
-      });
-
-      const mailOptions = {
-        from: `\"LIEC Web\" <${smtpUser}>`,
-        to: recipientEmail,
-        replyTo: email,
-        subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
-        text: `
+    const textContent = `
 Nouvelle demande de premier entretien d'orientation :
 
 • Nom & Prénom : ${fullName}
@@ -49,9 +27,10 @@ Nouvelle demande de premier entretien d'orientation :
 ${message || "Aucun message spécifique."}
 
 Date : ${new Date().toLocaleString("fr-FR", { timeZone: "Africa/Kinshasa" })} (heure de Kinshasa)
-        `.trim(),
-        html: `
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; rounded: 16px; background-color: #ffffff;">
+    `.trim();
+
+    const htmlContent = `
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff;">
   <div style="text-align: center; padding-bottom: 20px; border-bottom: 2px solid #002452;">
     <h2 style="color: #002452; margin: 0 0 6px 0;">LIEC — Lyon International Education Consulting</h2>
     <p style="color: #006a61; margin: 0; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
@@ -107,21 +86,89 @@ Date : ${new Date().toLocaleString("fr-FR", { timeZone: "Africa/Kinshasa" })} (h
     <p style="margin: 0;">Destiné au Bureau d'orientation LIEC (Lyon & Kinshasa) • <a href="mailto:${recipientEmail}" style="color: #002452;">${recipientEmail}</a></p>
   </div>
 </div>
-        `,
-      };
+    `.trim();
 
-      await transporter.sendMail(mailOptions);
-      return NextResponse.json({ success: true, method: "smtp" });
+    // 1. Essai d'envoi via Resend API (si configuré dans Vercel)
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (resendApiKey) {
+      try {
+        const fromEmail = process.env.RESEND_FROM || "LIEC Website <onboarding@resend.dev>";
+        const resendRes = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendApiKey.trim()}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: fromEmail,
+            to: [recipientEmail],
+            reply_to: email,
+            subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
+            html: htmlContent,
+            text: textContent,
+          }),
+        });
+
+        if (resendRes.ok) {
+          return NextResponse.json({ success: true, method: "resend" });
+        } else {
+          const errData = await resendRes.json();
+          console.error("Resend API error:", errData);
+        }
+      } catch (err: any) {
+        console.error("Resend fetch exception:", err?.message);
+      }
     }
 
-    // Si aucun SMTP n'est configuré sur le serveur, on renvoie une réponse indiquant le fallback client
+    // 2. Essai d'envoi via SMTP (Google Workspace / Gmail / Hostinger / OVH)
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
+    const smtpPort = Number(process.env.SMTP_PORT) || 465;
+
+    if (smtpUser && smtpPass) {
+      try {
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: smtpPort,
+          secure: smtpPort === 465,
+          auth: {
+            user: smtpUser,
+            pass: smtpPass,
+          },
+        });
+
+        const mailOptions = {
+          from: `"LIEC Web" <${smtpUser}>`,
+          to: recipientEmail,
+          replyTo: email,
+          subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
+          text: textContent,
+          html: htmlContent,
+        };
+
+        await transporter.sendMail(mailOptions);
+        return NextResponse.json({ success: true, method: "smtp" });
+      } catch (smtpErr: any) {
+        console.error("SMTP error during sendMail:", smtpErr?.message);
+        return NextResponse.json({
+          success: false,
+          method: "fallback",
+          error: smtpErr?.message,
+          recipient: recipientEmail,
+        });
+      }
+    }
+
+    // 3. Fallback client si aucun service d'envoi direct n'est encore configuré
     return NextResponse.json({
       success: true,
       method: "fallback",
       recipient: recipientEmail,
+      note: "No SMTP or Resend credentials configured yet on Vercel.",
     });
   } catch (error: any) {
-    console.error("Erreur d'envoi du formulaire de contact:", error);
+    console.error("Erreur générale du formulaire de contact:", error);
     return NextResponse.json(
       { error: "Une erreur est survenue lors du traitement du message." },
       { status: 500 }
