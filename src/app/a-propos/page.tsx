@@ -75,18 +75,34 @@ export default function AProposPage() {
         "Dispositif d’excellence pour la préparation méthodologique, académique et la réussite des entretiens d’admission.",
     },
     {
-      name: "My French Degree",
-      category: "",
-      icon: "workspace_premium",
-      description:
-        "Orientation et accompagnement vers les diplômes et cursus d’enseignement supérieur reconnus en France.",
-    },
-    {
       name: "DANOVA Société Civile Immobilière",
       category: "Logement",
       icon: "apartment",
       description:
         "Solutions d’hébergement étudiant et accompagnement pour l’obtention des attestations de logement en France.",
+    },
+    {
+      name: "AéroQualis",
+      category: "Voyage & Aviation",
+      icon: "flight_takeoff",
+      logo: "/logo_aeroqualis.png",
+      description:
+        "Vente de billets & services de voyage, transport Ville ↔ Aéroport, assistance documentaire & démarches aéronautiques, manuels, procédures & conseil aux compagnies aériennes, location et affrètement d'aéronefs.",
+      contacts: [
+        { label: "+243 990 207 891", tel: "+243990207891" },
+        { label: "+243 896 652 496", tel: "+243896652496" },
+      ],
+    },
+    {
+      name: "Royal Services",
+      category: "Voyage & Mobilité",
+      icon: "travel_explore",
+      logo: "/logo_royal_services.png",
+      description:
+        "Assistance voyage, demande de rendez-vous, réservation de billets et hôtels, classement et suivi de dossiers, orientation pour études à l’étranger.",
+      contacts: [
+        { label: "+243 821 340 580", tel: "+243821340580" },
+      ],
     },
   ];
 
@@ -134,6 +150,13 @@ export default function AProposPage() {
       logo: "/logo_ESMES_Business_School.png",
       fields:
         "Management, commerce, stratégie d’entreprise et développement international.",
+    },
+    {
+      number: "08",
+      name: "My French Degree",
+      logo: "/logo_my_french_degree.png",
+      fields:
+        "Communication and Advertising (via ISCOM)\nFinance, Accounting, and Auditing (via IHECF)\nDigital Technology, Webmarketing, and Development (via MyDigitalSchool)\nManagement, Commerce, and Human Resources (via Pigier, Ipac Bachelor Factory, and MBway)\nTourism, Luxury, and Event Management (via École Internationale Tunon)",
     },
   ];
 
@@ -240,7 +263,7 @@ export default function AProposPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
                   {liecPartners.map((partner, idx) => (
                     <div
                       key={idx}
@@ -248,11 +271,21 @@ export default function AProposPage() {
                     >
                       <div>
                         <div className="flex items-center justify-between mb-4">
-                          <div className="h-12 w-12 rounded-2xl bg-primary-container text-tertiary-fixed flex items-center justify-center shadow-sm">
-                            <span className="material-symbols-outlined text-2xl">
-                              {partner.icon}
-                            </span>
-                          </div>
+                          {partner.logo ? (
+                            <div className="h-12 w-12 rounded-2xl bg-white border border-surface-container shadow-sm p-1 flex items-center justify-center overflow-hidden">
+                              <img
+                                src={partner.logo}
+                                alt={`Logo ${partner.name}`}
+                                className="h-full w-full object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <div className="h-12 w-12 rounded-2xl bg-primary-container text-tertiary-fixed flex items-center justify-center shadow-sm">
+                              <span className="material-symbols-outlined text-2xl">
+                                {partner.icon}
+                              </span>
+                            </div>
+                          )}
                           {partner.category && (
                             <span className="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm font-bold uppercase tracking-wider">
                               {partner.category}
@@ -270,6 +303,30 @@ export default function AProposPage() {
                         <p className="font-body-md text-on-surface-variant leading-relaxed">
                           {partner.description}
                         </p>
+                        {partner.contacts && partner.contacts.length > 0 && (
+                          <div className="mt-4 pt-3 border-t border-surface-container-high/60">
+                            <span className="text-xs font-bold text-primary flex items-center gap-1 mb-1.5">
+                              <span className="material-symbols-outlined text-sm text-secondary">
+                                contact_phone
+                              </span>
+                              Contact &amp; réservations :
+                            </span>
+                            <div className="flex flex-wrap gap-2 text-xs font-semibold">
+                              {partner.contacts.map((c, cIdx) => (
+                                <a
+                                  key={cIdx}
+                                  href={`tel:${c.tel}`}
+                                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-secondary/10 hover:text-secondary text-primary transition-colors"
+                                >
+                                  <span className="material-symbols-outlined text-xs">
+                                    call
+                                  </span>
+                                  {c.label}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                       <div className="mt-5 pt-3 border-t border-surface-container-high flex items-center gap-1.5 text-xs font-bold text-primary">
                         <span className="material-symbols-outlined text-secondary text-base">
@@ -321,9 +378,20 @@ export default function AProposPage() {
                           </h3>
                         </div>
 
-                        <p className="font-body-sm text-on-surface-variant leading-relaxed mt-2">
-                          {school.fields}
-                        </p>
+                        {school.fields.includes("\n") ? (
+                          <ul className="mt-2 space-y-1.5 text-xs text-on-surface-variant leading-relaxed">
+                            {school.fields.split("\n").map((line, lIdx) => (
+                              <li key={lIdx} className="flex items-start gap-1.5">
+                                <span className="text-secondary font-bold text-sm leading-none mt-0.5">•</span>
+                                <span>{line}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="font-body-sm text-on-surface-variant leading-relaxed mt-2">
+                            {school.fields}
+                          </p>
+                        )}
                       </div>
 
                       <div className="mt-5 pt-3 border-t border-surface-container flex items-center justify-between text-xs font-bold text-secondary">
