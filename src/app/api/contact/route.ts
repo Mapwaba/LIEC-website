@@ -13,7 +13,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const recipientEmail = "contacts@liecconsulting.com";
+    const recipientEmail =
+      process.env.NOTIFICATION_EMAIL || "bmapwabantoro@liecconsulting.com";
 
     const textContent = `
 Nouvelle demande de premier entretien d'orientation :
