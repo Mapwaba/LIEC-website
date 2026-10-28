@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     const recipientEmail =
-      process.env.NOTIFICATION_EMAIL || "bmapwabantoro@liecconsulting.com";
+      process.env.NOTIFICATION_EMAIL || "contacts@liecconsulting.com";
 
     const textContent = `
 Nouvelle demande de premier entretien d'orientation :
@@ -95,26 +95,46 @@ Date : ${new Date().toLocaleString("fr-FR", { timeZone: "Africa/Kinshasa" })} (h
     if (resendApiKey) {
       try {
         const fromEmail = process.env.RESEND_FROM || "LIEC Website <onboarding@resend.dev>";
-        const resendRes = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${resendApiKey.trim()}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            from: fromEmail,
-            to: [recipientEmail],
-            reply_to: email,
-            subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
-            html: htmlContent,
-            text: textContent,
-          }),
-        });
+        const targetRecipient = process.env.NOTIFICATION_EMAIL || "contacts@liecconsulting.com";
+        const fallbackRecipient = "bmapwabantoro@liecconsulting.com";
+
+        const sendViaResend = async (toAddress: string) => {
+          return fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${resendApiKey.trim()}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              from: fromEmail,
+              to: [toAddress],
+              reply_to: email,
+              subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
+              html: htmlContent,
+              text: textContent,
+            }),
+          });
+        };
+
+        let resendRes = await sendViaResend(targetRecipient);
 
         if (resendRes.ok) {
-          return NextResponse.json({ success: true, method: "resend" });
+          return NextResponse.json({ success: true, method: "resend", recipient: targetRecipient });
         } else {
           resendDiag = await resendRes.json();
+          // Si le domaine n'est pas encore vérifié sur Resend, basculer automatiquement sur l'adresse du compte Resend
+          if (resendDiag?.statusCode === 403 && targetRecipient !== fallbackRecipient) {
+            console.warn("Resend test mode: redirection automatique vers le compte propriétaire", fallbackRecipient);
+            const fallbackRes = await sendViaResend(fallbackRecipient);
+            if (fallbackRes.ok) {
+              return NextResponse.json({
+                success: true,
+                method: "resend",
+                recipient: fallbackRecipient,
+                note: "Délivré au compte propriétaire. Pour recevoir sur contacts@liecconsulting.com, ajoutez votre domaine sur resend.com/domains ou changez l'email du compte Resend.",
+              });
+            }
+          }
           console.error("Resend API error:", resendDiag);
         }
       } catch (err: any) {
