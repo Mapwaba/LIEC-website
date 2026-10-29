@@ -75,7 +75,7 @@ export default function EtudierEnFrancePage() {
                       href="/demarrer-mon-projet"
                     >
                       <span
-                        className="material-symbols-outlined mr-2 text-xl"
+                        className="material-symbols-outlined notranslate mr-2 text-xl" translate="no"
                         style={{ fontVariationSettings: "'FILL' 1" }}
                       >
                         rocket_launch
@@ -86,7 +86,7 @@ export default function EtudierEnFrancePage() {
                       className="inline-flex items-center justify-center px-6 py-4 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg font-semibold hover:bg-surface-container-high hover:-translate-y-0.5 transition-all duration-200"
                       href="#etudier-en-france"
                     >
-                      <span className="material-symbols-outlined mr-2 text-xl">calendar_month</span>
+                      <span className="material-symbols-outlined notranslate mr-2 text-xl" translate="no">calendar_month</span>
                       Voir les 11 étapes
                     </a>
                   </div>
@@ -121,7 +121,7 @@ export default function EtudierEnFrancePage() {
                         <div className="flex items-center gap-space-sm">
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
                             <span
-                              className="material-symbols-outlined"
+                              className="material-symbols-outlined notranslate" translate="no"
                               style={{ fontVariationSettings: "'FILL' 1" }}
                             >
                               school
@@ -144,7 +144,7 @@ export default function EtudierEnFrancePage() {
 
                     <div className="absolute -top-4 -left-4 bg-primary-container text-surface p-space-md rounded-xl shadow-xl flex items-center gap-space-sm max-w-[230px]">
                       <span
-                        className="material-symbols-outlined text-tertiary-fixed text-2xl"
+                        className="material-symbols-outlined notranslate text-tertiary-fixed text-2xl" translate="no"
                         style={{ fontVariationSettings: "'FILL' 1" }}
                       >
                         verified
@@ -187,7 +187,7 @@ export default function EtudierEnFrancePage() {
                   >
                     <div>
                       <div className="h-12 w-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary mb-space-md group-hover:bg-secondary group-hover:text-surface transition-colors duration-300">
-                        <span className="material-symbols-outlined text-2xl">{item.icon}</span>
+                        <span className="material-symbols-outlined notranslate text-2xl" translate="no">{item.icon}</span>
                       </div>
                       <span className="text-xs font-bold uppercase tracking-wider text-secondary">
                         {item.subtitle}
@@ -201,7 +201,7 @@ export default function EtudierEnFrancePage() {
                     </div>
                     <div className="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between text-secondary font-label-md font-bold">
                       <span>{item.tag}</span>
-                      <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
+                      <span className="material-symbols-outlined notranslate text-base group-hover:translate-x-1 transition-transform" translate="no">
                         arrow_forward
                       </span>
                     </div>
@@ -227,7 +227,7 @@ export default function EtudierEnFrancePage() {
                     />
                     <div className="p-space-lg bg-surface-container-lowest">
                       <div className="flex items-center gap-2 text-secondary font-label-md font-bold mb-1">
-                        <span className="material-symbols-outlined text-lg">account_balance_wallet</span>
+                        <span className="material-symbols-outlined notranslate text-lg" translate="no">account_balance_wallet</span>
                         <span>Transparence Financière aux Familles</span>
                       </div>
                       <p className="font-body-sm text-on-surface-variant leading-relaxed">
@@ -239,7 +239,7 @@ export default function EtudierEnFrancePage() {
 
                 <div className="lg:col-span-7 flex flex-col gap-space-md">
                   <div className="inline-flex items-center gap-space-xs self-start rounded-full bg-primary-container px-space-md py-space-xs text-surface">
-                    <span className="material-symbols-outlined text-tertiary-fixed text-base">
+                    <span className="material-symbols-outlined notranslate text-tertiary-fixed text-base" translate="no">
                       verified_user
                     </span>
                     <span className="font-label-sm uppercase font-bold tracking-wider">
@@ -258,7 +258,7 @@ export default function EtudierEnFrancePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                     <div className="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm">
                       <div className="flex items-center gap-2 text-primary font-label-lg font-bold mb-2">
-                        <span className="material-symbols-outlined text-secondary">savings</span>
+                        <span className="material-symbols-outlined notranslate text-secondary" translate="no">savings</span>
                         <span>Garantie Financière &amp; AVI</span>
                       </div>
                       <p className="font-body-sm text-on-surface-variant leading-relaxed">
@@ -268,7 +268,7 @@ export default function EtudierEnFrancePage() {
 
                     <div className="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm">
                       <div className="flex items-center gap-2 text-primary font-label-lg font-bold mb-2">
-                        <span className="material-symbols-outlined text-secondary">apartment</span>
+                        <span className="material-symbols-outlined notranslate text-secondary" translate="no">apartment</span>
                         <span>Logement &amp; Caution Visale</span>
                       </div>
                       <p className="font-body-sm text-on-surface-variant leading-relaxed">
@@ -278,7 +278,7 @@ export default function EtudierEnFrancePage() {
 
                     <div className="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm">
                       <div className="flex items-center gap-2 text-primary font-label-lg font-bold mb-2">
-                        <span className="material-symbols-outlined text-secondary">health_and_safety</span>
+                        <span className="material-symbols-outlined notranslate text-secondary" translate="no">health_and_safety</span>
                         <span>Sécurité Sociale &amp; CVEC</span>
                       </div>
                       <p className="font-body-sm text-on-surface-variant leading-relaxed">
@@ -288,7 +288,7 @@ export default function EtudierEnFrancePage() {
 
                     <div className="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm">
                       <div className="flex items-center gap-2 text-primary font-label-lg font-bold mb-2">
-                        <span className="material-symbols-outlined text-secondary">badge</span>
+                        <span className="material-symbols-outlined notranslate text-secondary" translate="no">badge</span>
                         <span>Validation VLS-TS (OFII)</span>
                       </div>
                       <p className="font-body-sm text-on-surface-variant leading-relaxed">
@@ -333,7 +333,7 @@ export default function EtudierEnFrancePage() {
                 <div className="lg:col-span-6 p-space-lg lg:p-10 flex flex-col justify-between gap-space-md">
                   <div>
                     <div className="inline-flex items-center gap-1.5 text-secondary font-label-sm uppercase font-bold tracking-wider mb-2">
-                      <span className="material-symbols-outlined text-base">school</span>
+                      <span className="material-symbols-outlined notranslate text-base" translate="no">school</span>
                       <span>Siège LIEC — Lyon International</span>
                     </div>
                     <h3 className="font-headline-lg text-primary font-bold mb-3">
@@ -344,15 +344,15 @@ export default function EtudierEnFrancePage() {
                     </p>
                     <div className="flex flex-col gap-2.5">
                       <div className="flex items-center gap-2 text-primary font-body-sm font-semibold">
-                        <span className="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                        <span className="material-symbols-outlined notranslate text-secondary text-lg" translate="no">check_circle</span>
                         <span>Accompagnement d’accueil LIEC directement sur place à Lyon</span>
                       </div>
                       <div className="flex items-center gap-2 text-primary font-body-sm font-semibold">
-                        <span className="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                        <span className="material-symbols-outlined notranslate text-secondary text-lg" translate="no">check_circle</span>
                         <span>Fort bassin d’emplois étudiants, stages et alternances</span>
                       </div>
                       <div className="flex items-center gap-2 text-primary font-body-sm font-semibold">
-                        <span className="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                        <span className="material-symbols-outlined notranslate text-secondary text-lg" translate="no">check_circle</span>
                         <span>Réseau de transports et résidences universitaires accessibles</span>
                       </div>
                     </div>
@@ -360,7 +360,7 @@ export default function EtudierEnFrancePage() {
 
                   <div className="pt-4 border-t border-surface-container flex items-center justify-between">
                     <div className="flex items-center gap-2 text-secondary font-label-sm font-bold uppercase tracking-wider">
-                      <span className="material-symbols-outlined text-base">location_on</span>
+                      <span className="material-symbols-outlined notranslate text-base" translate="no">location_on</span>
                       <span>175 000+ étudiants • Présence LIEC sur place</span>
                     </div>
                     <Link
@@ -368,7 +368,7 @@ export default function EtudierEnFrancePage() {
                       className="inline-flex items-center gap-1 px-4 py-2 rounded-xl bg-tertiary-fixed text-primary font-label-sm font-bold hover:bg-tertiary-fixed-dim transition-colors"
                     >
                       <span>Étudier à Lyon</span>
-                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                      <span className="material-symbols-outlined notranslate text-sm" translate="no">arrow_forward</span>
                     </Link>
                   </div>
                 </div>

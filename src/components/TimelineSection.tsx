@@ -103,7 +103,7 @@ export default function TimelineSection() {
             {step.number}
           </span>
           <div className="h-9 w-9 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-surface transition-colors duration-200">
-            <span className="material-symbols-outlined text-lg">{step.icon}</span>
+            <span className="material-symbols-outlined notranslate text-lg" translate="no">{step.icon}</span>
           </div>
         </div>
         <div className="text-[11px] font-bold uppercase tracking-wider text-secondary mb-1">
@@ -118,7 +118,7 @@ export default function TimelineSection() {
       </div>
 
       <div className="mt-3 pt-2.5 border-t border-surface-container-high/60 inline-flex items-center gap-1 font-label-sm text-[11px] text-secondary font-semibold">
-        <span className="material-symbols-outlined text-xs">check_circle</span>
+        <span className="material-symbols-outlined notranslate text-xs" translate="no">check_circle</span>
         <span>{step.badge}</span>
       </div>
     </div>
@@ -141,7 +141,7 @@ export default function TimelineSection() {
             </p>
           </div>
           <div className="mt-space-md md:mt-0 flex items-center gap-space-sm text-on-surface-variant font-label-md text-label-md">
-            <span className="material-symbols-outlined text-secondary">schedule</span>
+            <span className="material-symbols-outlined notranslate text-secondary" translate="no">schedule</span>
             <span>Anticipation recommandée : 8 à 10 mois</span>
           </div>
         </div>

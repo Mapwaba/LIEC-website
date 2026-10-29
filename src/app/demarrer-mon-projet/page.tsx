@@ -186,7 +186,7 @@ export default function DemarrerMonProjetPage() {
           {submitted ? (
             <div className={`${neuCard} p-8 sm:p-12 text-center flex flex-col items-center gap-5 animate-fadeIn`}>
               <div className="h-24 w-24 rounded-full bg-[#eef2fc] shadow-[8px_8px_16px_#cad4e8,-8px_-8px_16px_#ffffff] flex items-center justify-center text-secondary">
-                <span className="material-symbols-outlined text-5xl">verified</span>
+                <span className="material-symbols-outlined notranslate text-5xl" translate="no">verified</span>
               </div>
 
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d8f6ea] text-[#0c685a] font-extrabold text-xs tracking-wider uppercase">
@@ -277,7 +277,7 @@ export default function DemarrerMonProjetPage() {
 
               {errorMsg && (
                 <div className="mb-6 rounded-2xl bg-red-50 border border-red-200 p-4 text-xs font-bold text-red-800 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-red-600">error</span>
+                  <span className="material-symbols-outlined notranslate text-red-600" translate="no">error</span>
                   <span>{errorMsg}</span>
                 </div>
               )}
@@ -300,12 +300,12 @@ export default function DemarrerMonProjetPage() {
 
                   {/* Nom complet du candidat */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                    <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                       <span>Nom complet du candidat <span className="text-error">*</span></span>
                       <span className="text-[10.5px] text-slate-400 font-normal">Ex: Cédric Ilunga</span>
                     </label>
                     <div className={neuInputWrapper}>
-                      <span className="material-symbols-outlined text-secondary text-xl">
+                      <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                         person
                       </span>
                       <input
@@ -321,12 +321,12 @@ export default function DemarrerMonProjetPage() {
 
                   {/* Adresse e-mail */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                    <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                       <span>Adresse e-mail <span className="text-error">*</span></span>
                       <span className="text-[10.5px] text-slate-400 font-normal">cedric.ilunga@gmail.com</span>
                     </label>
                     <div className={neuInputWrapper}>
-                      <span className="material-symbols-outlined text-secondary text-xl">
+                      <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                         mail
                       </span>
                       <input
@@ -342,12 +342,12 @@ export default function DemarrerMonProjetPage() {
 
                   {/* Téléphone / WhatsApp */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                    <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                       <span>Téléphone / WhatsApp <span className="text-error">*</span></span>
                       <span className="text-[10.5px] text-slate-400 font-normal">3/14 chiffres max (+243...)</span>
                     </label>
                     <div className={neuInputWrapper}>
-                      <span className="material-symbols-outlined text-secondary text-xl">
+                      <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                         phone
                       </span>
                       <input
@@ -369,7 +369,7 @@ export default function DemarrerMonProjetPage() {
                         Pays de recrutement <span className="text-error">*</span>
                       </label>
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           public
                         </span>
                         <select
@@ -398,7 +398,7 @@ export default function DemarrerMonProjetPage() {
                         Ville d&apos;origine
                       </label>
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           location_city
                         </span>
                         <input
@@ -418,7 +418,7 @@ export default function DemarrerMonProjetPage() {
                       Destination d&apos;études
                     </label>
                     <div className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/70 border border-slate-200 text-xs font-bold text-[#002452]">
-                      <span className="material-symbols-outlined text-secondary text-lg">
+                      <span className="material-symbols-outlined notranslate text-secondary text-lg" translate="no">
                         flight_takeoff
                       </span>
                       <span>Lyon (Exclusivement)</span>
@@ -444,12 +444,12 @@ export default function DemarrerMonProjetPage() {
 
                   {/* Nom complet du parent */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                    <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                       <span>Nom complet du parent</span>
                       <span className="text-[10.5px] text-slate-400 font-normal">Ex: Jean-Pierre Kabangele</span>
                     </label>
                     <div className={neuInputWrapper}>
-                      <span className="material-symbols-outlined text-secondary text-xl">
+                      <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                         family_restroom
                       </span>
                       <input
@@ -464,12 +464,12 @@ export default function DemarrerMonProjetPage() {
 
                   {/* Téléphone du parent */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                    <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                       <span>Téléphone du parent</span>
                       <span className="text-[10.5px] text-slate-400 font-normal">0/14 chiffres max (+243 81 900 1234)</span>
                     </label>
                     <div className={neuInputWrapper}>
-                      <span className="material-symbols-outlined text-secondary text-xl">
+                      <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                         call
                       </span>
                       <input
@@ -500,12 +500,12 @@ export default function DemarrerMonProjetPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Année d’obtention diplôme */}
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                      <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                         <span>Année d’obtention diplôme</span>
                         <span className="text-[10.5px] text-slate-400 font-normal">2024</span>
                       </label>
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           school
                         </span>
                         <input
@@ -520,12 +520,12 @@ export default function DemarrerMonProjetPage() {
 
                     {/* Dernière année univ. */}
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                      <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                         <span>Dernière année univ.</span>
                         <span className="text-[10.5px] text-slate-400 font-normal">max 4 chiffres (2024)</span>
                       </label>
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           history_edu
                         </span>
                         <input
@@ -542,12 +542,12 @@ export default function DemarrerMonProjetPage() {
 
                   {/* Activité actuelle */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-primary pl-1 flex items-center justify-between">
+                    <label className="text-xs font-bold text-primary pl-1 flex flex-wrap items-center justify-between gap-1">
                       <span>Activité actuelle</span>
                       <span className="text-[10.5px] text-slate-400 font-normal">0/25 max (Ex: Étudiant / Stagiaire)</span>
                     </label>
                     <div className={neuInputWrapper}>
-                      <span className="material-symbols-outlined text-secondary text-xl">
+                      <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                         badge
                       </span>
                       <input
@@ -616,7 +616,7 @@ export default function DemarrerMonProjetPage() {
                       Budget annuel garanti <span className="text-error">*</span>
                     </label>
                     <div className={neuInputWrapper}>
-                      <span className="material-symbols-outlined text-secondary text-xl">
+                      <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                         euro
                       </span>
                       <select
@@ -656,7 +656,7 @@ export default function DemarrerMonProjetPage() {
                     ) : (
                       <>
                         <span>Valider mon inscription • Envoi au Dashboard</span>
-                        <span className="material-symbols-outlined text-xl">send</span>
+                        <span className="material-symbols-outlined notranslate text-xl" translate="no">send</span>
                       </>
                     )}
                   </button>

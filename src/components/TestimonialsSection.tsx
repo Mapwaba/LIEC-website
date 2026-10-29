@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
 
           {/* Avertissement déontologique rigoureux */}
           <div className="mt-space-sm inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
-            <span className="material-symbols-outlined text-sm text-secondary">info</span>
+            <span className="material-symbols-outlined notranslate text-sm text-secondary" translate="no">info</span>
             <span>Démonstration illustrative en attente des bilans officiels de session</span>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
                   {[...Array(5)].map((_, i) => (
                     <span
                       key={i}
-                      className="material-symbols-outlined text-lg"
+                      className="material-symbols-outlined notranslate text-lg" translate="no"
                       style={{ fontVariationSettings: "'FILL' 1" }}
                     >
                       star

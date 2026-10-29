@@ -87,7 +87,7 @@ export default function NosServicesPage() {
                       href="/demarrer-mon-projet"
                     >
                       <span
-                        className="material-symbols-outlined mr-2 text-xl"
+                        className="material-symbols-outlined notranslate mr-2 text-xl" translate="no"
                         style={{ fontVariationSettings: "'FILL' 1" }}
                       >
                         edit_calendar
@@ -98,7 +98,7 @@ export default function NosServicesPage() {
                       className="inline-flex items-center justify-center px-6 py-4 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg font-semibold hover:bg-surface-container-high hover:-translate-y-0.5 transition-all duration-200"
                       href="#prestations"
                     >
-                      <span className="material-symbols-outlined mr-2 text-xl">view_agenda</span>
+                      <span className="material-symbols-outlined notranslate mr-2 text-xl" translate="no">view_agenda</span>
                       Découvrir nos pôles
                     </a>
                   </div>
@@ -118,7 +118,7 @@ export default function NosServicesPage() {
                         <div className="flex items-center gap-space-sm">
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
                             <span
-                              className="material-symbols-outlined"
+                              className="material-symbols-outlined notranslate" translate="no"
                               style={{ fontVariationSettings: "'FILL' 1" }}
                             >
                               support_agent
@@ -184,7 +184,7 @@ export default function NosServicesPage() {
                     <div className="flex flex-col gap-2.5 pt-2">
                       {service.points.map((pt, i) => (
                         <div key={i} className="flex items-start gap-2.5">
-                          <span className="material-symbols-outlined text-secondary text-xl mt-0.5">
+                          <span className="material-symbols-outlined notranslate text-secondary text-xl mt-0.5" translate="no">
                             check_circle
                           </span>
                           <span className="font-body-md text-primary font-medium">
@@ -199,7 +199,7 @@ export default function NosServicesPage() {
                         className="inline-flex items-center gap-2 text-secondary font-label-lg font-bold hover:underline"
                       >
                         <span>Démarrer mon projet avec ce pôle</span>
-                        <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                        <span className="material-symbols-outlined notranslate text-lg" translate="no">arrow_forward</span>
                       </Link>
                     </div>
                   </div>

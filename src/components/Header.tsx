@@ -85,7 +85,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
           >
-            <span className="material-symbols-outlined text-2xl">
+            <span className="material-symbols-outlined notranslate text-2xl" translate="no">
               {mobileMenuOpen ? "close" : "menu"}
             </span>
           </button>

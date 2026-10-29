@@ -106,7 +106,7 @@ export default function HeroSection() {
                 href="/demarrer-mon-projet"
               >
                 <span
-                  className="material-symbols-outlined mr-2 text-xl"
+                  className="material-symbols-outlined notranslate mr-2 text-xl" translate="no"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   rocket_launch
@@ -117,7 +117,7 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center px-6 py-4 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg font-semibold hover:bg-surface-container-high hover:-translate-y-0.5 transition-all duration-200"
                 href="/a-propos"
               >
-                <span className="material-symbols-outlined mr-2 text-xl">school</span>
+                <span className="material-symbols-outlined notranslate mr-2 text-xl" translate="no">school</span>
                 Découvrir LIEC &amp; PREPA
               </Link>
             </div>
@@ -126,7 +126,7 @@ export default function HeroSection() {
             <div className="pt-space-sm flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
               <div className="flex items-center gap-1.5">
                 <span
-                  className="material-symbols-outlined text-secondary text-base"
+                  className="material-symbols-outlined notranslate text-secondary text-base" translate="no"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   verified
@@ -136,7 +136,7 @@ export default function HeroSection() {
               <div className="h-1 w-1 rounded-full bg-outline-variant"></div>
               <div className="flex items-center gap-1.5">
                 <span
-                  className="material-symbols-outlined text-secondary text-base"
+                  className="material-symbols-outlined notranslate text-secondary text-base" translate="no"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   policy
@@ -181,7 +181,7 @@ export default function HeroSection() {
                   aria-label="Image précédente"
                   className="absolute left-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-surface/80 hover:bg-surface text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
                 >
-                  <span className="material-symbols-outlined text-xl">chevron_left</span>
+                  <span className="material-symbols-outlined notranslate text-xl" translate="no">chevron_left</span>
                 </button>
                 <button
                   type="button"
@@ -189,7 +189,7 @@ export default function HeroSection() {
                   aria-label="Image suivante"
                   className="absolute right-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-surface/80 hover:bg-surface text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
                 >
-                  <span className="material-symbols-outlined text-xl">chevron_right</span>
+                  <span className="material-symbols-outlined notranslate text-xl" translate="no">chevron_right</span>
                 </button>
 
                 {/* Points de pagination (Dots) */}
@@ -214,7 +214,7 @@ export default function HeroSection() {
                   <div className="flex items-center gap-space-sm">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
                       <span
-                        className="material-symbols-outlined"
+                        className="material-symbols-outlined notranslate" translate="no"
                         style={{ fontVariationSettings: "'FILL' 1" }}
                       >
                         {activeSlide.icon}
@@ -236,9 +236,9 @@ export default function HeroSection() {
               </div>
 
               {/* Badge Flottant Haut-Droit : Conseillers Lyon & Kinshasa */}
-              <div className="absolute -top-4 -right-4 sm:-right-6 bg-primary-container text-surface p-space-md rounded-xl shadow-xl flex items-center gap-space-sm max-w-[240px] z-20">
+              <div className="absolute -top-4 -right-4 sm:-right-6 bg-primary-container text-surface p-space-md rounded-xl shadow-xl flex items-center gap-space-sm max-w-[280px] sm:max-w-[320px] z-20">
                 <span
-                  className="material-symbols-outlined text-tertiary-fixed text-2xl"
+                  className="material-symbols-outlined notranslate text-tertiary-fixed text-2xl shrink-0 select-none" translate="no"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   public

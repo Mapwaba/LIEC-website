@@ -62,7 +62,7 @@ export default function PrepaSection() {
                     key={idx}
                     className="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm"
                   >
-                    <span className="material-symbols-outlined text-secondary text-2xl">
+                    <span className="material-symbols-outlined notranslate text-secondary text-2xl" translate="no">
                       {m.icon}
                     </span>
                     <div>
@@ -85,7 +85,7 @@ export default function PrepaSection() {
           {/* Descriptive Content */}
           <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-space-md">
             <div className="inline-flex items-center gap-space-xs self-start rounded-full bg-primary-container px-space-md py-space-xs text-surface">
-              <span className="material-symbols-outlined text-tertiary-fixed text-base">
+              <span className="material-symbols-outlined notranslate text-tertiary-fixed text-base" translate="no">
                 workspace_premium
               </span>
               <span className="font-label-sm text-label-sm uppercase font-bold tracking-wider text-surface">
@@ -106,7 +106,7 @@ export default function PrepaSection() {
               {highlights.map((h, idx) => (
                 <div key={idx} className="flex items-start gap-space-sm">
                   <div className="h-6 w-6 rounded-full bg-secondary text-surface flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="material-symbols-outlined text-sm font-bold">check</span>
+                    <span className="material-symbols-outlined notranslate text-sm font-bold" translate="no">check</span>
                   </div>
                   <div>
                     <strong className="font-label-lg text-label-lg text-primary">
@@ -126,7 +126,7 @@ export default function PrepaSection() {
                 href="/demarrer-mon-projet"
               >
                 S’inscrire au programme PREPA
-                <span className="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+                <span className="material-symbols-outlined notranslate ml-2 text-xl" translate="no">arrow_forward</span>
               </Link>
             </div>
           </div>

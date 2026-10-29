@@ -196,7 +196,7 @@ export default function AProposPage() {
                       href="/demarrer-mon-projet"
                     >
                       <span
-                        className="material-symbols-outlined mr-2 text-xl"
+                        className="material-symbols-outlined notranslate mr-2 text-xl" translate="no"
                         style={{ fontVariationSettings: "'FILL' 1" }}
                       >
                         rocket_launch
@@ -207,7 +207,7 @@ export default function AProposPage() {
                       className="inline-flex items-center justify-center px-6 py-4 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg font-semibold hover:bg-surface-container-high hover:-translate-y-0.5 transition-all duration-200"
                       href="#partenaires"
                     >
-                      <span className="material-symbols-outlined mr-2 text-xl">handshake</span>
+                      <span className="material-symbols-outlined notranslate mr-2 text-xl" translate="no">handshake</span>
                       Nos partenaires &amp; écoles
                     </a>
                   </div>
@@ -283,7 +283,7 @@ export default function AProposPage() {
                             </div>
                           ) : (
                             <div className="h-12 w-12 rounded-2xl bg-primary-container text-tertiary-fixed flex items-center justify-center shadow-sm">
-                              <span className="material-symbols-outlined text-2xl">
+                              <span className="material-symbols-outlined notranslate text-2xl" translate="no">
                                 {partner.icon}
                               </span>
                             </div>
@@ -308,7 +308,7 @@ export default function AProposPage() {
                         {partner.contacts && partner.contacts.length > 0 && (
                           <div className="mt-4 pt-3 border-t border-surface-container-high/60">
                             <span className="text-xs font-bold text-primary flex items-center gap-1 mb-1.5">
-                              <span className="material-symbols-outlined text-sm text-secondary">
+                              <span className="material-symbols-outlined notranslate text-sm text-secondary" translate="no">
                                 contact_phone
                               </span>
                               Contact &amp; réservations :
@@ -320,7 +320,7 @@ export default function AProposPage() {
                                   href={`tel:${c.tel}`}
                                   className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container hover:bg-secondary/10 hover:text-secondary text-primary transition-colors"
                                 >
-                                  <span className="material-symbols-outlined text-xs">
+                                  <span className="material-symbols-outlined notranslate text-xs" translate="no">
                                     call
                                   </span>
                                   {c.label}
@@ -331,7 +331,7 @@ export default function AProposPage() {
                         )}
                       </div>
                       <div className="mt-5 pt-3 border-t border-surface-container-high flex items-center gap-1.5 text-xs font-bold text-primary">
-                        <span className="material-symbols-outlined text-secondary text-base">
+                        <span className="material-symbols-outlined notranslate text-secondary text-base" translate="no">
                           verified
                         </span>
                         <span>Partenaire Officiel LIEC</span>
@@ -398,7 +398,7 @@ export default function AProposPage() {
 
                       <div className="mt-5 pt-3 border-t border-surface-container flex items-center justify-between text-xs font-bold text-secondary">
                         <span>École partenaire</span>
-                        <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+                        <span className="material-symbols-outlined notranslate text-sm group-hover:translate-x-1 transition-transform" translate="no">
                           school
                         </span>
                       </div>
@@ -449,7 +449,7 @@ export default function AProposPage() {
                     </p>
                   </div>
                   <div className="pt-3 border-t border-surface-container-high flex items-center gap-2 text-secondary font-label-md font-bold">
-                    <span className="material-symbols-outlined text-lg">check_circle</span>
+                    <span className="material-symbols-outlined notranslate text-lg" translate="no">check_circle</span>
                     <span>Rendez-vous physiques &amp; suivi personnalisé des parents</span>
                   </div>
                 </div>
@@ -475,7 +475,7 @@ export default function AProposPage() {
                     </p>
                   </div>
                   <div className="pt-3 border-t border-surface-container-high flex items-center gap-2 text-secondary font-label-md font-bold">
-                    <span className="material-symbols-outlined text-lg">check_circle</span>
+                    <span className="material-symbols-outlined notranslate text-lg" translate="no">check_circle</span>
                     <span>Ancrage direct dans l’écosystème universitaire français</span>
                   </div>
                 </div>
@@ -509,7 +509,7 @@ export default function AProposPage() {
                   >
                     <div>
                       <div className="h-12 w-12 rounded-xl bg-surface-container-lowest text-secondary flex items-center justify-center mb-space-md shadow-sm">
-                        <span className="material-symbols-outlined text-2xl">{val.icon}</span>
+                        <span className="material-symbols-outlined notranslate text-2xl" translate="no">{val.icon}</span>
                       </div>
                       <h3 className="font-headline-sm text-primary font-bold mb-2">
                         {val.title}
@@ -519,7 +519,7 @@ export default function AProposPage() {
                       </p>
                     </div>
                     <div className="mt-4 pt-3 border-t border-surface-container-high flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-wider">
-                      <span className="material-symbols-outlined text-sm">verified</span>
+                      <span className="material-symbols-outlined notranslate text-sm" translate="no">verified</span>
                       <span>Engagement LIEC</span>
                     </div>
                   </div>

@@ -148,7 +148,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 max-w-xl">
                     <div className="p-4 rounded-2xl bg-surface-container-low flex items-center gap-3">
                       <div className="h-10 w-10 rounded-xl bg-secondary text-surface flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined">call</span>
+                        <span className="material-symbols-outlined notranslate" translate="no">call</span>
                       </div>
                       <div>
                         <p className="font-label-sm text-on-surface-variant uppercase">
@@ -165,7 +165,7 @@ export default function ContactPage() {
 
                     <div className="p-4 rounded-2xl bg-surface-container-low flex items-center gap-3">
                       <div className="h-10 w-10 rounded-xl bg-primary-container text-tertiary-fixed flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined">mail</span>
+                        <span className="material-symbols-outlined notranslate" translate="no">mail</span>
                       </div>
                       <div>
                         <p className="font-label-sm text-on-surface-variant uppercase">
@@ -182,7 +182,7 @@ export default function ContactPage() {
 
                     <div className="sm:col-span-2 p-4 rounded-2xl bg-surface-container-low flex items-start gap-3">
                       <div className="h-10 w-10 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center shrink-0 mt-0.5">
-                        <span className="material-symbols-outlined">location_on</span>
+                        <span className="material-symbols-outlined notranslate" translate="no">location_on</span>
                       </div>
                       <div>
                         <p className="font-label-sm text-on-surface-variant uppercase font-bold">
@@ -207,7 +207,7 @@ export default function ContactPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4 p-space-md rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-lg flex items-center justify-between">
                       <div className="flex items-center gap-space-sm">
-                        <span className="material-symbols-outlined text-secondary text-2xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-2xl" translate="no">
                           schedule
                         </span>
                         <div>
@@ -256,7 +256,7 @@ export default function ContactPage() {
                   {submitted ? (
                     <div className="p-8 rounded-3xl bg-[#eef2fc] shadow-[inset_6px_6px_12px_#cbd5ea,inset_-6px_-6px_12px_#ffffff] text-center flex flex-col items-center gap-4">
                       <div className={`h-16 w-16 rounded-full ${submissionStatus === "direct" ? "bg-secondary/15 text-secondary" : "bg-primary/10 text-primary"} flex items-center justify-center`}>
-                        <span className="material-symbols-outlined text-4xl">
+                        <span className="material-symbols-outlined notranslate text-4xl" translate="no">
                           {submissionStatus === "direct" ? "mark_email_read" : "send"}
                         </span>
                       </div>
@@ -285,7 +285,7 @@ export default function ContactPage() {
                             href={mailtoUrl}
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-primary text-surface font-label-md font-bold shadow-[4px_4px_10px_#b8c4dd,-4px_-4px_10px_#ffffff] hover:opacity-90 transition-all text-xs"
                           >
-                            <span className="material-symbols-outlined text-base">mail</span>
+                            <span className="material-symbols-outlined notranslate text-base" translate="no">mail</span>
                             {submissionStatus === "direct" ? "Ouvrir dans ma messagerie" : "Transmettre par Email (contacts@liecconsulting.com)"}
                           </a>
                         )}
@@ -296,7 +296,7 @@ export default function ContactPage() {
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-secondary text-surface font-label-md font-bold shadow-[4px_4px_10px_#b8c4dd,-4px_-4px_10px_#ffffff] hover:bg-primary transition-all text-xs"
                           >
-                            <span className="material-symbols-outlined text-base">chat</span>
+                            <span className="material-symbols-outlined notranslate text-base" translate="no">chat</span>
                             Notifier par WhatsApp (+243 803 615 543)
                           </a>
                         )}
@@ -323,7 +323,7 @@ export default function ContactPage() {
                   ) : (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           person
                         </span>
                         <input
@@ -338,7 +338,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           call
                         </span>
                         <input
@@ -359,7 +359,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           mail
                         </span>
                         <input
@@ -374,7 +374,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           school
                         </span>
                         <select
@@ -393,7 +393,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
                           work
                         </span>
                         <input
@@ -408,7 +408,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className={neuTextareaWrapper}>
-                        <span className="material-symbols-outlined text-secondary text-xl mt-1">
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl mt-1" translate="no">
                           chat
                         </span>
                         <textarea
@@ -447,7 +447,7 @@ export default function ContactPage() {
                 <div className="lg:col-span-5 flex flex-col gap-6">
                   <div className="p-8 rounded-[36px] bg-primary-container text-surface shadow-[12px_12px_24px_#c6d0e6,-8px_-8px_20px_#ffffff]">
                     <div className="flex items-center gap-2 text-tertiary-fixed font-label-md uppercase font-bold mb-2">
-                      <span className="material-symbols-outlined">location_city</span>
+                      <span className="material-symbols-outlined notranslate" translate="no">location_city</span>
                       <span>Siège France — Lyon</span>
                     </div>
                     <h3 className="font-headline-sm font-bold mb-2">
@@ -463,7 +463,7 @@ export default function ContactPage() {
 
                   <div className={`${neuCard} p-8`}>
                     <div className="flex items-center gap-2 text-secondary font-label-md uppercase font-bold mb-2">
-                      <span className="material-symbols-outlined">public</span>
+                      <span className="material-symbols-outlined notranslate" translate="no">public</span>
                       <span>Bureau RDC — Kinshasa</span>
                     </div>
                     <h3 className="font-headline-sm text-primary font-bold mb-2">
@@ -517,7 +517,7 @@ export default function ContactPage() {
                           {item.step}
                         </span>
                         <div className="h-11 w-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
-                          <span className="material-symbols-outlined text-2xl">{item.icon}</span>
+                          <span className="material-symbols-outlined notranslate text-2xl" translate="no">{item.icon}</span>
                         </div>
                       </div>
                       <h3 className="font-headline-sm text-primary font-bold mb-2">

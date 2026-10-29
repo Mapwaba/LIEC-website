@@ -10,7 +10,7 @@ export default function CtaBannerSection() {
 
       <div className="max-w-5xl mx-auto px-margin-mobile lg:px-margin text-center relative z-10 flex flex-col items-center">
         <div className="inline-flex items-center gap-space-xs rounded-full bg-surface/10 px-space-md py-space-xs text-secondary-fixed mb-space-md">
-          <span className="material-symbols-outlined text-lg">calendar_month</span>
+          <span className="material-symbols-outlined notranslate text-lg" translate="no">calendar_month</span>
           <span className="font-label-sm text-label-sm uppercase font-bold tracking-wider">
             Sessions Rentrée 2026-2027
           </span>
@@ -31,7 +31,7 @@ export default function CtaBannerSection() {
             href="/contact"
           >
             <span
-              className="material-symbols-outlined mr-2 text-xl"
+              className="material-symbols-outlined notranslate mr-2 text-xl" translate="no"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               support_agent

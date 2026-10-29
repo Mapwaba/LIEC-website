@@ -71,7 +71,7 @@ export default function FeaturesSection() {
                   }`}
                 >
                   <span
-                    className="material-symbols-outlined text-2xl"
+                    className="material-symbols-outlined notranslate text-2xl" translate="no"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     {feat.icon}
@@ -86,7 +86,7 @@ export default function FeaturesSection() {
               </div>
               <div className="pt-space-md mt-space-sm flex items-center text-secondary font-label-md text-label-md font-bold group-hover:translate-x-1 transition-transform">
                 <span>{feat.actionText}</span>
-                <span className="material-symbols-outlined ml-1 text-base">arrow_forward</span>
+                <span className="material-symbols-outlined notranslate ml-1 text-base" translate="no">arrow_forward</span>
               </div>
             </div>
           ))}
