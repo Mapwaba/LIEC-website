@@ -463,7 +463,7 @@ export default function ContactPage() {
 
                   <div className={`${neuCard} p-8`}>
                     <div className="flex items-center gap-2 text-secondary font-label-md uppercase font-bold mb-2">
-                      <span className="material-symbols-outlined notranslate" translate="no">public</span>
+                      <span className="material-symbols-outlined notranslate" translate="no" aria-hidden="true">&#xe80b;</span>
                       <span>Bureau RDC — Kinshasa</span>
                     </div>
                     <h3 className="font-headline-sm text-primary font-bold mb-2">

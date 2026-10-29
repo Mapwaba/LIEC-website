@@ -240,9 +240,7 @@ export default function HeroSection() {
                 <span
                   className="material-symbols-outlined notranslate text-tertiary-fixed text-2xl shrink-0 select-none" translate="no"
                   style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  public
-                </span>
+                 aria-hidden="true">&#xe80b;</span>
                 <div className="flex flex-col">
                   <span className="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-wider">
                     Double Présence

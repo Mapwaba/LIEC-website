@@ -19,6 +19,7 @@ export default function Header() {
   ];
 
   const isActive = (href: string) => {
+    if (!pathname) return href === "/";
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };

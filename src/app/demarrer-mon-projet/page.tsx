@@ -369,9 +369,7 @@ export default function DemarrerMonProjetPage() {
                         Pays de recrutement <span className="text-error">*</span>
                       </label>
                       <div className={neuInputWrapper}>
-                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no">
-                          public
-                        </span>
+                        <span className="material-symbols-outlined notranslate text-secondary text-xl" translate="no" aria-hidden="true">&#xe80b;</span>
                         <select
                           value={paysRecrutement}
                           onChange={(e) => setPaysRecrutement(e.target.value)}
