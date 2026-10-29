@@ -47,32 +47,44 @@ export default function DemarrerMonProjetPage() {
       email: email.trim(),
       phone: telephone.trim(),
       country: paysRecrutement,
+      country_name: paysRecrutement.includes("Brazza") ? "Congo-Brazzaville" : "RDC",
       ville_origine: villeOrigine.trim(),
+      city: `${villeOrigine.trim()}, ${paysRecrutement.includes("Brazza") ? "Congo" : "RDC"}`,
       destination,
       parent_name: nomParent.trim(),
+      parent_full_name: nomParent.trim(),
       parent_phone: telephoneParent.trim(),
       annee_diplome: anneeDiplome.trim(),
+      graduation_year: anneeDiplome.trim(),
       activite_actuelle: activiteActuelle.trim(),
+      current_activity: activiteActuelle.trim(),
       derniere_annee_univ: derniereAnneeUniv.trim(),
+      final_year_university: derniereAnneeUniv.trim(),
       program: ecolePartenaire,
       budget_annuel: budgetAnnuel,
-      source: "LIEC - France Prépa ENROLLMENT FORM • 2027-2028",
+      budget_range: budgetAnnuel,
+      academic_intake: "2027–2028",
+      service_pole: "LIEC - France Prépa",
+      source: "LIEC - France Prépa ENROLLMENT FORM • 2027–2028",
     };
 
     try {
-      // 1. Try forwarding via internal API
+      // 1. Forward through internal prepa-enrollment API
       let res = await fetch("/api/prepa-enrollment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      // 2. Direct fallback to LIEC-ONE dashboard API (port 3001) if internal gateway returns an error
+      // 2. Direct fallback to LIEC Heav'n workspace subproduction endpoint
       if (!res.ok) {
         try {
-          const directRes = await fetch("http://localhost:3001/api/candidats", {
+          const directRes = await fetch("https://liec-heav-n-workspace-git-main-bmapwabantoro-7094.vercel.app/api/demandes", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              "x-user-email": "public-portal@liecconsulting.com",
+            },
             body: JSON.stringify(payload),
           });
           if (directRes.ok) {
@@ -81,29 +93,32 @@ export default function DemarrerMonProjetPage() {
         } catch {}
       }
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
-      if (res.ok && (data.ok || data.success)) {
-        setCandidateRef(data.ref || "#CAN-2025-NEW");
+      if (res.ok && (data.ok || data.success || data.demande)) {
+        setCandidateRef(data.ref || data.demRef || data.demande?.ref || "#DEM-2027-NEW");
         setSubmitted(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         setErrorMsg(
           data.error ||
-            "Une erreur est survenue lors de l'enregistrement de votre candidature. Veuillez réessayer."
+            "Une erreur est survenue lors de l'enregistrement de votre candidature. Vos informations ont été conservées, veuillez réessayer."
         );
       }
     } catch (err: any) {
-      // In case of network interruption, attempt direct client POST to dashboard
+      // In case of network interruption, attempt direct client POST to LIEC Heav'n workspace
       try {
-        const directRes = await fetch("http://localhost:3001/api/candidats", {
+        const directRes = await fetch("https://liec-heav-n-workspace-git-main-bmapwabantoro-7094.vercel.app/api/demandes", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            "x-user-email": "public-portal@liecconsulting.com",
+          },
           body: JSON.stringify(payload),
         });
-        const directData = await directRes.json();
-        if (directRes.ok && directData.ok) {
-          setCandidateRef(directData.ref || "#CAN-2025-NEW");
+        const directData = await directRes.json().catch(() => ({}));
+        if (directRes.ok && (directData.ok || directData.demande)) {
+          setCandidateRef(directData.ref || directData.demande?.ref || "#DEM-2027-NEW");
           setSubmitted(true);
           window.scrollTo({ top: 0, behavior: "smooth" });
           return;
@@ -111,7 +126,7 @@ export default function DemarrerMonProjetPage() {
       } catch {}
 
       setErrorMsg(
-        "Impossible de joindre le serveur. Assurez-vous que le dashboard LIEC-ONE est accessible."
+        "Impossible de joindre le serveur LIEC Heav’n. Vos données sont conservées dans ce formulaire, veuillez vérifier votre connexion."
       );
     } finally {
       setLoading(false);
@@ -176,7 +191,7 @@ export default function DemarrerMonProjetPage() {
 
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d8f6ea] text-[#0c685a] font-extrabold text-xs tracking-wider uppercase">
                 <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
-                Connecté en direct au Dashboard LIEC-ONE
+                Connecté en direct au Workspace LIEC Heav’n
               </div>
 
               <h2 className="font-headline-lg text-primary font-extrabold text-2xl sm:text-3xl">
@@ -196,7 +211,7 @@ export default function DemarrerMonProjetPage() {
 
               <p className="font-body-md text-on-surface-variant max-w-lg leading-relaxed text-sm sm:text-base">
                 Félicitations <strong className="text-primary">{nomComplet}</strong> ! Tes informations pour le programme{" "}
-                <strong className="text-primary">LIEC - France Prépa (2027-2028)</strong> ont été transmises instantanément dans le dashboard officiel de nos conseillers pédagogiques à Lyon et Kinshasa.
+                <strong className="text-primary">LIEC - France Prépa (2027–2028)</strong> ont été transmises instantanément dans le dashboard officiel de nos conseillers pédagogiques à Lyon et Kinshasa.
               </p>
 
               <div className="rounded-2xl bg-[#f0faf7] border border-[#ccece2] p-4 text-left w-full max-w-md text-xs space-y-1.5 text-slate-700">
@@ -253,7 +268,7 @@ export default function DemarrerMonProjetPage() {
                   LIEC - France Prépa
                 </h1>
                 <p className="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-secondary mt-1">
-                  ENROLLMENT FORM • 2027-2028
+                  ENROLLMENT FORM • 2027–2028
                 </p>
                 <p className="text-xs text-on-surface-variant mt-2 max-w-md">
                   Étude en France • Remplis ce formulaire officiel pour que ton dossier apparaisse directement comme candidat sur le Dashboard des conseillers.
