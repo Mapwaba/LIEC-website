@@ -174,7 +174,7 @@ export default function DemarrerMonProjetPage() {
 
               <p className="font-body-md text-on-surface-variant max-w-lg leading-relaxed text-sm sm:text-base">
                 Félicitations <strong className="text-primary">{nomComplet}</strong> ! Tes informations pour le programme{" "}
-                <strong className="text-primary">LIEC - France Prépa (2027–2028)</strong> ont été transmises instantanément dans le dashboard officiel de nos conseillers pédagogiques à Lyon et Kinshasa.
+                <strong className="text-primary">LIEC - France Prépa (2027–2028)</strong> ont été transmises avec succès dans le dashboard officiel et adressées par email au bureau d’orientation (contacts@liecconsulting.com).
               </p>
 
               <div className="rounded-2xl bg-[#f0faf7] border border-[#ccece2] p-4 text-left w-full max-w-md text-xs space-y-1.5 text-slate-700">

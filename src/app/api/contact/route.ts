@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { sendNotificationEmail } from "@/lib/mailer";
 
 export async function POST(request: Request) {
   try {
@@ -89,108 +89,19 @@ Date : ${new Date().toLocaleString("fr-FR", { timeZone: "Africa/Kinshasa" })} (h
 </div>
     `.trim();
 
-    // 1. Essai d'envoi via Resend API (si configuré dans Vercel)
-    const resendApiKey = process.env.RESEND_API_KEY;
-    let resendDiag: any = null;
-    if (resendApiKey) {
-      try {
-        const fromEmail = process.env.RESEND_FROM || "LIEC Website <onboarding@resend.dev>";
-        const targetRecipient = process.env.NOTIFICATION_EMAIL || "contacts@liecconsulting.com";
-        const fallbackRecipient = "bmapwabantoro@liecconsulting.com";
+    const mailResult = await sendNotificationEmail({
+      to: recipientEmail,
+      replyTo: email,
+      subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
+      html: htmlContent,
+      text: textContent,
+    });
 
-        const sendViaResend = async (toAddress: string) => {
-          return fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${resendApiKey.trim()}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              from: fromEmail,
-              to: [toAddress],
-              reply_to: email,
-              subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
-              html: htmlContent,
-              text: textContent,
-            }),
-          });
-        };
-
-        let resendRes = await sendViaResend(targetRecipient);
-
-        if (resendRes.ok) {
-          return NextResponse.json({ success: true, method: "resend", recipient: targetRecipient });
-        } else {
-          resendDiag = await resendRes.json();
-          // Si le domaine n'est pas encore vérifié sur Resend, basculer automatiquement sur l'adresse du compte Resend
-          if (resendDiag?.statusCode === 403 && targetRecipient !== fallbackRecipient) {
-            console.warn("Resend test mode: redirection automatique vers le compte propriétaire", fallbackRecipient);
-            const fallbackRes = await sendViaResend(fallbackRecipient);
-            if (fallbackRes.ok) {
-              return NextResponse.json({
-                success: true,
-                method: "resend",
-                recipient: fallbackRecipient,
-                note: "Délivré au compte propriétaire. Pour recevoir sur contacts@liecconsulting.com, ajoutez votre domaine sur resend.com/domains ou changez l'email du compte Resend.",
-              });
-            }
-          }
-          console.error("Resend API error:", resendDiag);
-        }
-      } catch (err: any) {
-        resendDiag = { exception: err?.message };
-        console.error("Resend fetch exception:", err?.message);
-      }
-    }
-
-    // 2. Essai d'envoi via SMTP (Google Workspace / Gmail / Hostinger / OVH)
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
-    const smtpPort = Number(process.env.SMTP_PORT) || 465;
-
-    if (smtpUser && smtpPass) {
-      try {
-        const transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: smtpPort,
-          secure: smtpPort === 465,
-          auth: {
-            user: smtpUser,
-            pass: smtpPass,
-          },
-        });
-
-        const mailOptions = {
-          from: `"LIEC Web" <${smtpUser}>`,
-          to: recipientEmail,
-          replyTo: email,
-          subject: `[LIEC] Demande de 1er entretien d'orientation — ${fullName}`,
-          text: textContent,
-          html: htmlContent,
-        };
-
-        await transporter.sendMail(mailOptions);
-        return NextResponse.json({ success: true, method: "smtp" });
-      } catch (smtpErr: any) {
-        console.error("SMTP error during sendMail:", smtpErr?.message);
-        return NextResponse.json({
-          success: false,
-          method: "fallback",
-          error: smtpErr?.message,
-          resendConfigured: Boolean(resendApiKey),
-          resendDiag,
-          recipient: recipientEmail,
-        });
-      }
-    }
-
-    // 3. Fallback client si aucun service d'envoi direct n'est encore configuré
     return NextResponse.json({
       success: true,
-      method: "fallback",
-      recipient: recipientEmail,
-      note: "No SMTP or Resend credentials configured yet on Vercel.",
+      method: mailResult.method,
+      recipient: mailResult.recipient,
+      sent: mailResult.sent,
     });
   } catch (error: any) {
     console.error("Erreur générale du formulaire de contact:", error);
