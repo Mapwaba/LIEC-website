@@ -69,29 +69,11 @@ export default function DemarrerMonProjetPage() {
     };
 
     try {
-      // 1. Forward through internal prepa-enrollment API
-      let res = await fetch("/api/prepa-enrollment", {
+      const res = await fetch("/api/prepa-enrollment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
-      // 2. Direct fallback to LIEC Heav'n workspace subproduction endpoint
-      if (!res.ok) {
-        try {
-          const directRes = await fetch("https://liec-heav-n-workspace-git-main-bmapwabantoro-7094.vercel.app/api/demandes", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-user-email": "public-portal@liecconsulting.com",
-            },
-            body: JSON.stringify(payload),
-          });
-          if (directRes.ok) {
-            res = directRes;
-          }
-        } catch {}
-      }
 
       const data = await res.json().catch(() => ({}));
 
@@ -106,25 +88,6 @@ export default function DemarrerMonProjetPage() {
         );
       }
     } catch (err: any) {
-      // In case of network interruption, attempt direct client POST to LIEC Heav'n workspace
-      try {
-        const directRes = await fetch("https://liec-heav-n-workspace-git-main-bmapwabantoro-7094.vercel.app/api/demandes", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-user-email": "public-portal@liecconsulting.com",
-          },
-          body: JSON.stringify(payload),
-        });
-        const directData = await directRes.json().catch(() => ({}));
-        if (directRes.ok && (directData.ok || directData.demande)) {
-          setCandidateRef(directData.ref || directData.demande?.ref || "#DEM-2027-NEW");
-          setSubmitted(true);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          return;
-        }
-      } catch {}
-
       setErrorMsg(
         "Impossible de joindre le serveur LIEC Heav’n. Vos données sont conservées dans ce formulaire, veuillez vérifier votre connexion."
       );
