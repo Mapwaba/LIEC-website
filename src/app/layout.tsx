@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <link rel="icon" href={getAssetPath("/logo_LIEC (1).png")} type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-surface font-body-md text-on-surface antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed font-sans">
+      <body
+        suppressHydrationWarning
+        className="bg-surface font-body-md text-on-surface antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed font-sans"
+      >
         {children}
       </body>
     </html>
