@@ -35,7 +35,7 @@ export default function TestimonialsSection() {
       name: "Blessing GUBEGELA M.",
       subtitle: "B1 Développement Web",
       quote:
-        "« Je voulais partager mon expérience avec LIEC et sa prépa. Au départ, je pensais simplement suivre quelques webinaires. J'en suis ressorti transformé.\n\nGrâce aux coachings et à un suivi vraiment personnalisé, j'ai appris à construire un projet professionnel, quelque chose que l'école ne m'avait jamais enseigné. J'ai aussi appris à prendre la parole avec assurance, à convaincre, et à devenir plus responsable.\n\nEt surtout, il y a eu l'ambiance. Les encadreurs ne se contentent pas de transmettre : ils vous portent. Pendant ces séances, on oublie les soucis du quotidien, on se sent capable, on se met en mouvement.\n\nAujourd'hui, je regarde le chemin parcouru et je ne vois plus les mêmes possibilités qu'avant.\n\nSi vous hésitez encore, posez-vous une seule question : où voulez-vous être dans un an ? Pour ma part, j'ai trouvé ma réponse avec LIEC, et je la recommande sans réserve pour son professionnalisme.\n\nFaites le premier pas. Vous me remercierez plus tard. »",
+        "« Au départ, je pensais simplement participer à quelques webinaires. Grâce aux coachings et à l'accompagnement personnalisé de LIEC, j'ai appris à construire mon projet professionnel, à prendre la parole avec assurance et à devenir plus responsable.\n\nAu-delà des formations, j'ai trouvé une équipe qui encourage, accompagne et donne confiance.\n\nAujourd'hui, je vois mon avenir autrement. LIEC m'a aidé à révéler mon potentiel et je recommande vivement son professionnalisme.\n\nFaites le premier pas ! »",
       tag: "Conseil aux étudiants • Rentrée 2026",
     },
   ];
