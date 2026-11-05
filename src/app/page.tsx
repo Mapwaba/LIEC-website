@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import VisaSuccessBanner from "@/components/VisaSuccessBanner";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import TimelineSection from "@/components/TimelineSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <Header />
       <main className="w-full pt-20 bg-surface min-h-screen">
         <div className="flex flex-col w-full">
+          <VisaSuccessBanner />
           <HeroSection />
           <FeaturesSection />
           <TimelineSection />

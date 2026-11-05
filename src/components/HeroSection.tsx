@@ -4,6 +4,7 @@ import { getAssetPath } from "@/lib/assets";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import PromoDiscountBadge from "./PromoDiscountBadge";
 
 interface HeroSlide {
   src: string;
@@ -98,6 +99,9 @@ export default function HeroSection() {
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
               Construis ton projet d’études en France avec LIEC. De l’orientation au dossier de candidature, nous t’accompagnons pour avancer avec méthode et confiance.
             </p>
+
+            {/* Offre Spéciale Rentrée 2027-2028 (Automatique 7 Nov 2026 - 7 Jan 2027) */}
+            <PromoDiscountBadge />
 
             {/* Boutons CTA Dual */}
             <div className="flex flex-wrap items-center gap-space-md pt-space-xs">

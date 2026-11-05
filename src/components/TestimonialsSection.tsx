@@ -29,6 +29,15 @@ export default function TestimonialsSection() {
         "« Ce que nous avons particulièrement apprécié, c'est l'honnêteté sur les coûts réels de la vie étudiante en France et l'absence de promesses irréalistes. Cela rassure les parents. »",
       tag: "Conseil aux familles • Rentrée 2026",
     },
+    {
+      initials: "BG",
+      avatarBg: "bg-[#002452] text-[#ffdf9e] border border-[#ffdf9e]/30 shadow-sm",
+      name: "Blessing GUBEGELA M.",
+      subtitle: "B1 Développement Web",
+      quote:
+        "« Je voulais partager mon expérience avec LIEC et sa prépa. Au départ, je pensais simplement suivre quelques webinaires. J'en suis ressorti transformé.\n\nGrâce aux coachings et à un suivi vraiment personnalisé, j'ai appris à construire un projet professionnel, quelque chose que l'école ne m'avait jamais enseigné. J'ai aussi appris à prendre la parole avec assurance, à convaincre, et à devenir plus responsable.\n\nEt surtout, il y a eu l'ambiance. Les encadreurs ne se contentent pas de transmettre : ils vous portent. Pendant ces séances, on oublie les soucis du quotidien, on se sent capable, on se met en mouvement.\n\nAujourd'hui, je regarde le chemin parcouru et je ne vois plus les mêmes possibilités qu'avant.\n\nSi vous hésitez encore, posez-vous une seule question : où voulez-vous être dans un an ? Pour ma part, j'ai trouvé ma réponse avec LIEC, et je la recommande sans réserve pour son professionnalisme.\n\nFaites le premier pas. Vous me remercierez plus tard. »",
+      tag: "Conseil aux étudiants • Rentrée 2026",
+    },
   ];
 
   return (
@@ -52,16 +61,16 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-stretch">
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm"
+              className="flex flex-col justify-between p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div>
                 <div className="flex items-center gap-space-sm mb-space-md">
                   <div
-                    className={`h-12 w-12 rounded-full flex items-center justify-center font-headline-sm font-bold ${t.avatarBg}`}
+                    className={`h-12 w-12 rounded-full flex items-center justify-center font-headline-sm font-bold shrink-0 ${t.avatarBg}`}
                   >
                     {t.initials}
                   </div>
@@ -85,12 +94,12 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
 
-                <p className="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">
+                <p className="font-body-md text-body-md text-on-surface-variant italic leading-relaxed whitespace-pre-line">
                   {t.quote}
                 </p>
               </div>
 
-              <div className="mt-space-md pt-space-sm text-[11px] font-label-sm text-outline uppercase tracking-wider">
+              <div className="mt-space-md pt-space-sm text-[11px] font-label-sm text-outline uppercase tracking-wider border-t border-surface-container/60">
                 {t.tag}
               </div>
             </div>
