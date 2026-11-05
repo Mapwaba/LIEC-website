@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="w-full pt-[112px] sm:pt-28 bg-surface min-h-screen">
+      <main className="w-full pt-[116px] sm:pt-[120px] bg-surface min-h-screen">
         <div className="flex flex-col w-full">
           <VisaSuccessBanner />
           <HeroSection />

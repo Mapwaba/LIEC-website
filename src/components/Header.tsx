@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(21,58,112,0.06)]">
       {/* Top Banner */}
-      <div className="bg-primary-container text-surface px-margin-mobile lg:px-margin py-space-xs text-center font-label-sm text-label-sm tracking-wide">
+      <div className="bg-primary-container text-surface px-margin-mobile lg:px-margin py-2 sm:py-2.5 text-center font-label-sm text-xs sm:text-[13px] tracking-wide">
         <span className="inline-flex items-center gap-space-xs">
           <span className="text-tertiary-fixed font-bold">
             🎓 Inscriptions ouvertes :
