@@ -22,7 +22,7 @@ export default function VisaSuccessBanner() {
         {/* Centered content block: Badge + Headline + Supporting message */}
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
           {/* Attractive celebratory badge with animated sway and golden aura */}
-          <div className="visa-success-sway inline-flex flex-wrap sm:flex-nowrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#ffdf9e]/20 via-[#ffdf9e]/15 to-[#ffdf9e]/20 border border-[#ffdf9e]/40 text-[#ffdf9e] shadow-[0_0_16px_rgba(255,223,158,0.22)] shrink-0">
+          <div className="visa-success-sway inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#ffdf9e]/20 via-[#ffdf9e]/15 to-[#ffdf9e]/20 border border-[#ffdf9e]/40 text-[#ffdf9e] shadow-[0_0_16px_rgba(255,223,158,0.22)] shrink-0">
             <span
               className="material-symbols-outlined notranslate text-lg shrink-0 text-[#ffdf9e]"
               translate="no"
@@ -31,10 +31,7 @@ export default function VisaSuccessBanner() {
               workspace_premium
             </span>
             <span className="font-label-sm text-xs sm:text-[13px] uppercase font-black tracking-wider whitespace-nowrap">
-              100 % DE RÉUSSITE VISA
-            </span>
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#ffdf9e]/25 border border-[#ffdf9e]/30 text-[#ffdf9e] text-[11px] sm:text-xs font-bold tracking-tight whitespace-nowrap">
-              pour l'année 2025–2026 !
+              100 % DE RÉUSSITE VISA pour l'année 2025–2026 !
             </span>
           </div>
 
