@@ -29,7 +29,7 @@ export default function Footer() {
               <p>
                 Adresse à Kinshasa :{" "}
                 <span className="text-surface">
-                  Avenue Tropique, n°27/419, 3ème rue, Immeuble MAMAN NYEMBO, Q/ Résidentiel, C/ Limete.
+                  Bld du 30 Juin, arrêt Sabena/ Réf Centre Elite, C/ Gombe, Bâtiment AIHOM meubles de maison, 6 niveau ; V/ Kinshasa
                 </span>
               </p>
               <p>
@@ -47,7 +47,7 @@ export default function Footer() {
                   className="text-secondary-fixed hover:underline"
                   href="tel:+243803615543"
                 >
-                  +243 803 615 543
+                  +243 803 615 543 / +33 7 69 86 09 13
                 </a>
               </p>
             </div>

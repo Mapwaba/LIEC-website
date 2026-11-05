@@ -32,7 +32,7 @@ export default function Header() {
           <span className="text-tertiary-fixed font-bold">
             🎓 Inscriptions ouvertes :
           </span>
-          Programme LIEC & France PREPA | Accompagnement rentrée universitaire 2026-2027
+          Programme LIEC & France PREPA | Accompagnement rentrée universitaire 2027-2028
         </span>
       </div>
 

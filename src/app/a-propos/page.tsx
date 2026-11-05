@@ -442,10 +442,10 @@ export default function AProposPage() {
                       Bureau de Kinshasa — Préparation &amp; Familles
                     </h3>
                     <p className="font-body-md text-on-surface-variant leading-relaxed mb-3">
-                      Point de rencontre privilégié pour les étudiants et leurs parents. Nous y réalisons les bilans d’orientation, la constitution des dossiers académiques, les cours LIEC-France PREPA et les simulations d’entretiens Campus France.
+                      Point de rencontre privilégié pour les étudiants et leurs parents. Nous y réalisons les bilans d’orientation, la constitution des dossiers académiques, les cours LIEC &amp; France PREPA et les simulations d’entretiens Campus France.
                     </p>
                     <p className="font-body-sm text-primary font-semibold mb-4">
-                      📍 Avenue Tropique, n°27/419, 3ème rue, Immeuble MAMAN NYEMBO, Q/ Résidentiel, C/ Limete.
+                      📍 Bld du 30 Juin, arrêt Sabena/ Réf Centre Elite, C/ Gombe, Bâtiment AIHOM meubles de maison, 6 niveau ; V/ Kinshasa
                     </p>
                   </div>
                   <div className="pt-3 border-t border-surface-container-high flex items-center gap-2 text-secondary font-label-md font-bold">

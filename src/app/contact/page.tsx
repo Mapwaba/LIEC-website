@@ -158,7 +158,7 @@ export default function ContactPage() {
                           href="tel:+243803615543"
                           className="font-label-lg text-primary font-bold hover:text-secondary transition-colors"
                         >
-                          +243 803 615 543
+                          +243 803 615 543 / +33 7 69 86 09 13
                         </a>
                       </div>
                     </div>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                           Adresse à Kinshasa
                         </p>
                         <p className="font-body-sm text-primary font-semibold leading-snug mt-0.5">
-                          Avenue Tropique, n°27/419, 3ème rue, Immeuble MAMAN NYEMBO, Q/ Résidentiel, C/ Limete.
+                          Bld du 30 Juin, arrêt Sabena/ Réf Centre Elite, C/ Gombe, Bâtiment AIHOM meubles de maison, 6 niveau ; V/ Kinshasa
                         </p>
                       </div>
                     </div>
@@ -470,13 +470,13 @@ export default function ContactPage() {
                       Pôle Dossiers, PREPA &amp; Familles
                     </h3>
                     <p className="font-body-sm text-on-surface-variant leading-relaxed mb-4">
-                      Entretiens d’orientation en présentiel, réunions d’information avec les parents, préparation Campus France et sessions LIEC-France PREPA.
+                      Entretiens d’orientation en présentiel, réunions d’information avec les parents, préparation Campus France et sessions LIEC & France PREPA.
                     </p>
                     <div className="flex flex-col gap-1.5 text-xs text-primary font-semibold">
                       <div>
-                        📍 Avenue Tropique, n°27/419, 3ème rue, Immeuble MAMAN NYEMBO, Q/ Résidentiel, C/ Limete.
+                        📍 Bld du 30 Juin, arrêt Sabena/ Réf Centre Elite, C/ Gombe, Bâtiment AIHOM meubles de maison, 6 niveau ; V/ Kinshasa
                       </div>
-                      <div>📞 +243 803 615 543</div>
+                      <div>📞 +243 803 615 543 / +33 7 69 86 09 13</div>
                       <div>✉️ contacts@liecconsulting.com</div>
                     </div>
                   </div>
