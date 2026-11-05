@@ -21,8 +21,8 @@ export default function VisaSuccessBanner() {
       <div className="max-w-6xl mx-auto px-margin-mobile lg:px-margin py-4 sm:py-5 relative z-10 flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 text-center lg:text-left">
         {/* Centered content block: Badge + Headline + Supporting message */}
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
-          {/* Elegant celebratory badge */}
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#ffdf9e]/15 border border-[#ffdf9e]/30 text-[#ffdf9e] shrink-0 shadow-sm">
+          {/* Elegant celebratory badge with smooth back-and-forth attention animation */}
+          <div className="visa-success-sway inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#ffdf9e]/15 border border-[#ffdf9e]/35 text-[#ffdf9e] shrink-0 shadow-sm">
             <span
               className="material-symbols-outlined notranslate text-lg shrink-0"
               translate="no"

@@ -52,3 +52,47 @@
   /* Google & Apple Translate Exclusion */
   -webkit-touch-callout: none;
 }
+
+
+/* Visa Success Badge Back-and-Forth Animation */
+@keyframes visa-sway {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes visa-sway-mobile {
+  0% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(-3px);
+  }
+}
+
+.visa-success-sway {
+  animation: visa-sway 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .visa-success-sway {
+    animation: visa-sway-mobile 2.8s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visa-success-sway {
+    animation: none !important;
+    transform: none !important;
+  }
+}
