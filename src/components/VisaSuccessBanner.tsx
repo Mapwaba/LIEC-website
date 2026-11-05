@@ -21,17 +21,20 @@ export default function VisaSuccessBanner() {
       <div className="max-w-6xl mx-auto px-margin-mobile lg:px-margin py-4 sm:py-5 relative z-10 flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 text-center lg:text-left">
         {/* Centered content block: Badge + Headline + Supporting message */}
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
-          {/* Elegant celebratory badge with smooth back-and-forth attention animation */}
-          <div className="visa-success-sway inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#ffdf9e]/15 border border-[#ffdf9e]/35 text-[#ffdf9e] shrink-0 shadow-sm">
+          {/* Attractive celebratory badge with animated sway and golden aura */}
+          <div className="visa-success-sway inline-flex flex-wrap sm:flex-nowrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#ffdf9e]/20 via-[#ffdf9e]/15 to-[#ffdf9e]/20 border border-[#ffdf9e]/40 text-[#ffdf9e] shadow-[0_0_16px_rgba(255,223,158,0.22)] shrink-0">
             <span
-              className="material-symbols-outlined notranslate text-lg shrink-0"
+              className="material-symbols-outlined notranslate text-lg shrink-0 text-[#ffdf9e]"
               translate="no"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               workspace_premium
             </span>
-            <span className="font-label-sm text-xs uppercase font-extrabold tracking-wider whitespace-nowrap">
-              100 % DE RÉUSSITE VISA !
+            <span className="font-label-sm text-xs sm:text-[13px] uppercase font-black tracking-wider whitespace-nowrap">
+              100 % DE RÉUSSITE VISA
+            </span>
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#ffdf9e]/25 border border-[#ffdf9e]/30 text-[#ffdf9e] text-[11px] sm:text-xs font-bold tracking-tight whitespace-nowrap">
+              pour l'année 2025–2026 !
             </span>
           </div>
 
@@ -41,7 +44,7 @@ export default function VisaSuccessBanner() {
               Une nouvelle étape franchie avec nos étudiants. Leur réussite est notre plus belle récompense.
             </p>
             <p className="text-[11px] sm:text-xs text-[#ffdf9e]/85 mt-1 leading-normal font-normal">
-              Résultats certifiés cohorte précédente • Les décisions de visa relèvent exclusivement des consulats de France.
+              Résultats certifiés session 2025–2026 • Les décisions de visa relèvent exclusivement des consulats de France.
             </p>
           </div>
         </div>
