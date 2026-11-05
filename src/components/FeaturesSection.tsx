@@ -22,7 +22,7 @@ export default function FeaturesSection() {
       icon: "auto_stories",
       title: "Préparation académique",
       description:
-        "Mise à niveau méthodologique, pré-requis d’expression et immersion avec le programme exclusif LIEC-France PREPA.",
+        "Mise à niveau méthodologique, pré-requis d’expression et immersion avec le programme exclusif LIEC & France PREPA.",
       actionText: "Programme PREPA",
       highlight: true,
     },

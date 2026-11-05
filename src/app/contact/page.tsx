@@ -133,7 +133,7 @@ export default function ContactPage() {
                   <div className="inline-flex items-center gap-space-sm self-start rounded-full bg-surface-container px-space-md py-space-xs shadow-sm">
                     <span className="flex h-2.5 w-2.5 rounded-full bg-secondary animate-pulse"></span>
                     <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">
-                      Contact &amp; Diagnostic Initial • Lyon &amp; Kinshasa
+                      Contact &amp; Diagnostic Initial • Kinshasa &amp; Lyon
                     </span>
                   </div>
 
@@ -142,7 +142,7 @@ export default function ContactPage() {
                   </h1>
 
                   <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-                    Que tu sois étudiant ou parent d’élève, nos conseillers de Lyon et de Kinshasa sont à ton écoute pour démarrer ton dossier et répondre à toutes tes questions.
+                    Que tu sois étudiant ou parent d’élève, nos conseillers de Kinshasa et de Lyon sont à ton écoute pour démarrer ton dossier et répondre à toutes tes questions.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 max-w-xl">
@@ -249,7 +249,7 @@ export default function ContactPage() {
                       Premier entretien d’orientation
                     </h2>
                     <p className="font-body-sm text-on-surface-variant mt-1 max-w-md">
-                      Remplis ce formulaire rapide pour être recontacté sous 24h par un conseiller LIEC (Lyon ou Kinshasa).
+                      Remplis ce formulaire rapide pour être recontacté sous 24h par un conseiller LIEC (Kinshasa ou Lyon).
                     </p>
                   </div>
 
@@ -270,7 +270,7 @@ export default function ContactPage() {
                       {submissionStatus === "direct" ? (
                         <p className="font-body-md text-on-surface-variant max-w-md leading-relaxed">
                           Un email a été envoyé directement à <a href="mailto:contacts@liecconsulting.com" className="text-primary font-bold underline">contacts@liecconsulting.com</a>.
-                          Un conseiller académique LIEC (Lyon &amp; Kinshasa) vous contactera sous 24h ouvrées par email ou WhatsApp.
+                          Un conseiller académique LIEC (Kinshasa &amp; Lyon) vous contactera sous 24h ouvrées par email ou WhatsApp.
                         </p>
                       ) : (
                         <p className="font-body-md text-on-surface-variant max-w-md leading-relaxed">

@@ -27,7 +27,7 @@ const HERO_SLIDES: HeroSlide[] = [
     src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
     alt: "Étudiants noirs préparant leurs dossiers académiques en groupe",
     icon: "school",
-    badgeTitle: "Programme LIEC-France PREPA",
+    badgeTitle: "Programme LIEC & France PREPA",
     badgeSubtitle: "Excellence académique & entretiens",
     badgeTag: "Prépa Intensive",
   },
@@ -45,7 +45,7 @@ const HERO_SLIDES: HeroSlide[] = [
     icon: "flight_takeoff",
     badgeTitle: "Suivi Campus France & Visa",
     badgeSubtitle: "De l'admission jusqu'à l'installation",
-    badgeTag: "Lyon & Kinshasa",
+    badgeTag: "Kinshasa & Lyon",
   },
 ];
 
@@ -235,7 +235,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Badge Flottant Haut-Droit : Conseillers Lyon & Kinshasa */}
+              {/* Badge Flottant Haut-Droit : Conseillers Kinshasa & Lyon */}
               <div className="absolute -top-4 -right-4 sm:-right-6 bg-primary-container text-surface p-space-md rounded-xl shadow-xl flex items-center gap-space-sm max-w-[280px] sm:max-w-[320px] z-20">
                 <span
                   className="material-symbols-outlined notranslate text-tertiary-fixed text-2xl shrink-0 select-none" translate="no"
@@ -246,7 +246,7 @@ export default function HeroSection() {
                     Double Présence
                   </span>
                   <span className="font-body-sm text-body-sm text-surface font-semibold leading-tight">
-                    Conseillers certifiés à Lyon &amp; Kinshasa
+                    Conseillers certifiés à Kinshasa &amp; Lyon
                   </span>
                 </div>
               </div>

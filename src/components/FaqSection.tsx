@@ -23,9 +23,9 @@ export default function FaqSection() {
     },
     {
       question:
-        "Qu’est-ce qui distingue le programme LIEC-France PREPA d’un simple coaching ?",
+        "Qu’est-ce qui distingue le programme LIEC & France PREPA d’un simple coaching ?",
       answer:
-        "PREPA n'est pas une simple relecture administrative de CV. C'est un programme préparatoire d'immersion pédagogique centré sur les compétences réelles requises dans les amphithéâtres et salles de TD en France : rigueur de l'argumentation, techniques de dissertation universitaire, maîtrise des outils de recherche documentaire et simulations orales.",
+        "PREPA n'est pas une simple relecture administrative de CV ou project d'étude. C'est un programme préparatoire d'immersion pédagogique centré sur les compétences réelles requises dans les amphithéâtres et salles de TD en France : rigueur de l'argumentation, techniques de dissertation universitaire, évolution personnelle, travail centé sur la communication dans toutes ses formes, tenue et attitude adaptées, maîtrise des outils de recherche documentaire et simulations orales.",
     },
     {
       question:

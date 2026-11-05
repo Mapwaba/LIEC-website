@@ -28,7 +28,7 @@ export default function TimelineSection() {
       number: "03",
       icon: "school",
       title: "Préparation académique & entretiens",
-      description: "Construire un projet solide",
+      description: "Construire un projet d'étude solide",
       badge: "Méthodologie",
     },
     {

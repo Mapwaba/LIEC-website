@@ -31,7 +31,7 @@ export default function PrepaSection() {
     },
     {
       strong: "Suivi individualisé par des mentors :",
-      text: " Accompagnement régulier avec des universitaires et anciens diplômés basés à Lyon.",
+      text: " Accompagnement régulier avec des universitaires et anciens diplômés basés à Lyon, Londres et Douala.",
     },
   ];
 
@@ -77,7 +77,7 @@ export default function PrepaSection() {
 
               {/* Encadré déontologique institutionnel */}
               <div className="mt-space-xs p-space-sm rounded-lg bg-surface-container text-primary font-body-sm text-body-sm text-center font-medium">
-                Dispense de cours intensifs en présentiel &amp; e-learning guidé
+                Dispense de cours intensifs en distanciel &amp; e-learning guidé
               </div>
             </div>
           </div>

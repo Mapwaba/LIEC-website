@@ -101,7 +101,7 @@ export default function EtudierEnFrancePage() {
                       <p className="font-body-sm text-on-surface-variant">Parcours encadré LIEC</p>
                     </div>
                     <div>
-                      <p className="font-headline-lg text-primary font-extrabold">Lyon &amp; Kin</p>
+                      <p className="font-headline-lg text-primary font-extrabold">Kin &amp; Lyon</p>
                       <p className="font-body-sm text-on-surface-variant">Suivi de proximité</p>
                     </div>
                   </div>

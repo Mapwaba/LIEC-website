@@ -12,7 +12,7 @@ export default function CtaBannerSection() {
         <div className="inline-flex items-center gap-space-xs rounded-full bg-surface/10 px-space-md py-space-xs text-secondary-fixed mb-space-md">
           <span className="material-symbols-outlined notranslate text-lg" translate="no">calendar_month</span>
           <span className="font-label-sm text-label-sm uppercase font-bold tracking-wider">
-            Sessions Rentrée 2026-2027
+            Sessions Rentrée 2027-2028
           </span>
         </div>
 
@@ -22,7 +22,7 @@ export default function CtaBannerSection() {
         </h2>
 
         <p className="font-body-lg text-body-lg text-surface-variant max-w-2xl mt-space-md mb-space-lg leading-relaxed">
-          Prends rendez-vous dès aujourd’hui pour un premier échange d’orientation sans engagement avec nos spécialistes à Lyon et Kinshasa.
+          Prends rendez-vous dès aujourd’hui pour un premier échange d’orientation sans engagement avec nos spécialistes à Kinshasa et Lyon.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-space-md w-full justify-center">

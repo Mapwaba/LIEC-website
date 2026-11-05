@@ -24,7 +24,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-space-xs font-body-sm text-body-sm text-surface-variant">
               <p className="text-surface font-medium">
-                Bureaux : Lyon (France) &amp; Kinshasa (RDC)
+                Bureaux : Kinshasa (RDC) &amp; Lyon (France)
               </p>
               <p>
                 Adresse à Kinshasa :{" "}

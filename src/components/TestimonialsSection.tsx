@@ -9,7 +9,7 @@ export default function TestimonialsSection() {
       subtitle: "B3 Développement Web",
       quote:
         "« La structuration du projet m'a permis de mieux comprendre ce que les universités attendaient dans le dossier. Les retours méthodologiques sur ma lettre de motivation ont été déterminants. »",
-      tag: "Projet 2025/2026 • Accompagnement complet",
+      tag: "Projet 2025/2026 • Accompagnement complet • Rentrée 2026",
     },
     {
       initials: "MN",
@@ -18,7 +18,7 @@ export default function TestimonialsSection() {
       subtitle: "B1 Management des entreprises",
       quote:
         "« Les séances préparatoires PREPA m’ont donné les repères nécessaires sur les cours magistraux et les travaux dirigés. C’est un vrai pont de confiance avant le grand saut. »",
-      tag: "Cohorte PREPA • Session Automne",
+      tag: "Cohorte PREPA • Session Automne • Rentrée 2026",
     },
     {
       initials: "TM",
@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
       subtitle: "M1 Responsabilité sociale des entreprises",
       quote:
         "« Ce que nous avons particulièrement apprécié, c'est l'honnêteté sur les coûts réels de la vie étudiante en France et l'absence de promesses irréalistes. Cela rassure les parents. »",
-      tag: "Conseil aux familles • Rentrée 2025",
+      tag: "Conseil aux familles • Rentrée 2026",
     },
   ];
 
